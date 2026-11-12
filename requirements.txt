@@ -1,0 +1,5 @@
+# The engine runs on the Python 3.10+ standard library alone.
+#
+# Nothing here is installed by the pipeline: urllib, json and xml.etree cover
+# the HTTP, JSON and RSS work. If you add an adapter that needs a package, pin
+# it in this file and note it in the README.
