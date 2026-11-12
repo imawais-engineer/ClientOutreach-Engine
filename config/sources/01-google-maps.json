@@ -1,0 +1,217 @@
+{
+  "id": "google_maps",
+  "stage": 1,
+  "title": "Google Maps business discovery",
+  "enabled": true,
+  "kind": "business_discovery",
+  "brain": "config/brain.json",
+  "note": "Google Maps is a business discovery source, not proof that a business needs automation.",
+  "do_not_mix_with": ["job_boards", "social"],
+  "do_not_mix_rule": "During this stage, job-board listings, social media discoveries and unrelated sources are out of scope. They are trained separately.",
+
+  "geography": {
+    "targeting": "explicit",
+    "default_market": null,
+    "pilot_markets": ["US", "GB", "CA", "AU"],
+    "active_markets": ["US", "GB", "CA", "AU"],
+    "markets": {
+      "US": {
+        "country_code": "US",
+        "country": "United States",
+        "level": "country",
+        "region": "North America",
+        "cities": ["Austin", "Chicago", "Denver", "Miami", "Seattle", "San Diego"],
+        "currency": "USD"
+      },
+      "GB": {
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "level": "country",
+        "region": "Europe",
+        "cities": ["Manchester", "Birmingham", "Leeds", "Bristol", "Glasgow", "Edinburgh"],
+        "currency": "GBP"
+      },
+      "CA": {
+        "country_code": "CA",
+        "country": "Canada",
+        "level": "country",
+        "region": "North America",
+        "cities": ["Toronto", "Vancouver", "Calgary", "Ottawa", "Montreal", "Halifax"],
+        "currency": "CAD"
+      },
+      "AU": {
+        "country_code": "AU",
+        "country": "Australia",
+        "level": "country",
+        "region": "Oceania",
+        "cities": ["Melbourne", "Sydney", "Brisbane", "Perth", "Adelaide", "Gold Coast"],
+        "currency": "AUD"
+      }
+    },
+    "pilot_note": "The pilot markets are a test scope, not a permanent restriction. They do not represent the whole addressable market.",
+    "inference_rule": "Location is an explicit discovery parameter. Never derive the target market from the operator's location, account locale, IP address, interface language, timezone or the result of a previous run.",
+    "no_default_rule": "There is no default market. If active_markets is empty the source must refuse to run rather than fall back to any single city or country.",
+    "stored_fields_rule": "Store the business's own location (city, country, verified address) separately from the target market it was discovered for. Never write a target market into a location field.",
+    "verification_rule": "A business is only described as located in a market when evidence verifies it. Do not confuse registered address, operating markets and service coverage: a business serving US clients from another country is not 'located in the United States'.",
+    "unsupported_targeting_rule": "If the integration cannot reliably restrict a search to a market, record that limitation and stop that market's test. Never silently substitute another location.",
+    "expansion_rule": "Cities are a starting slice only. Expand to further cities or regional coverage within a market when the first slice is exhausted and the tools remain inside their limits.",
+    "rule": "Respect configured search locations and source-access rules rather than widening the area on its own."
+  },
+
+  "target_categories": [
+    {
+      "name": "Digital marketing agencies",
+      "terms": ["digital marketing agency"]
+    },
+    {
+      "name": "Web development agencies",
+      "terms": ["web development agency"]
+    },
+    {
+      "name": "CRM and sales automation consultants",
+      "terms": ["CRM consultant", "sales automation consultant"]
+    },
+    {
+      "name": "Lead generation agencies",
+      "terms": ["lead generation agency"]
+    },
+    {
+      "name": "Software development and IT service companies",
+      "terms": ["software development company", "IT services company"]
+    },
+    {
+      "name": "E-commerce implementation agencies",
+      "terms": ["ecommerce development agency", "Shopify agency"]
+    },
+    {
+      "name": "Business process and technology consultants",
+      "terms": ["business process consultant", "technology consultant"]
+    }
+  ],
+
+  "search": {
+    "max_results_per_query": 5,
+    "small_batch_rule": "Start with a small batch per market and inspect evidence quality before expanding. Equal numbers per market are not required and no market may be padded to reach a quota.",
+    "terms_per_market": 5,
+    "cities_per_market": 4,
+    "notes": {
+      "query_intent_warning": "In the Pakistan run, 'CRM consultant Lahore' and 'technology consultant Lahore' returned study-abroad and visa consultancies rather than CRM consultants. Prefer 'CRM automation agency <city>' style terms when a plain '<category> consultant' term returns an off-intent result.",
+      "candidate_pool_note": "The candidate pool may be larger than the final batch; only scored, verified candidates are saved."
+    },
+    "candidate_pool_note": "The candidate pool may be larger than the final batch; only scored, verified candidates are saved."
+  },
+
+  "research_each_business": [
+    "Confirm the business name and category from its Google Maps listing.",
+    "Confirm the business's actual location from the listing and the site before recording city or country.",
+    "Find its official website when available.",
+    "Review its actual services, case studies, integrations and public business information.",
+    "Identify one specific reason it could benefit from an external automation partner.",
+    "Record the evidence supporting that reason, including the source URL and a short factual summary.",
+    "Record whether that evidence is a confirmed requirement, an observed opportunity signal, or a hypothesis you inferred.",
+    "Identify the most relevant service the engineer could offer.",
+    "Record a legitimate business contact channel if publicly available, and label it unverified unless independently confirmed.",
+    "Determine whether the business is distinct from existing leads in every market already searched."
+  ],
+  "unknown_rule": "If the website or supporting evidence cannot be accessed, mark the information as unknown. Do not fill gaps using assumptions.",
+  "access_rules": [
+    "Use permitted access methods only.",
+    "Respect source terms, privacy requirements and applicable laws.",
+    "Do not bypass authentication, CAPTCHAs or access controls.",
+    "Do not incur paid API, scraping or enrichment costs without authorization."
+  ],
+
+  "scoring": {
+    "model": "v2_separated_dimensions",
+    "model_note": "Six separate dimensions on a 0-5 internal scale, weighted to a 100-point ranking aid. Dimensions are reported separately as well as summed so a blended total can never hide a missing evidence dimension.",
+    "dimensions": {
+      "service_fit": {
+        "weight": 0.25,
+        "max": 25,
+        "question": "Does the business's model or documented activity align with a service the engineer has actually demonstrated?"
+      },
+      "need_evidence": {
+        "weight": 0.25,
+        "max": 25,
+        "question": "How strong is the traceable evidence for a relevant opportunity, as opposed to a category match or an inference?"
+      },
+      "buying_intent": {
+        "weight": 0.2,
+        "max": 20,
+        "question": "Is there a current, explicit, citable demand signal? Scores zero unless evidence supports it."
+      },
+      "verification": {
+        "weight": 0.15,
+        "max": 15,
+        "question": "Are the business identity, source and location verified?"
+      },
+      "contactability": {
+        "weight": 0.1,
+        "max": 10,
+        "question": "Is there a credible, publicly available route to the business or decision-maker?"
+      },
+      "geographic_relevance": {
+        "weight": 0.05,
+        "max": 5,
+        "question": "Is the business verified as located in a market that is in scope for this run?"
+      }
+    },
+    "hard_gates": [
+      "No verified business identity -> do not qualify.",
+      "No traceable, relevant evidence -> do not qualify.",
+      "No defensible service match -> do not qualify.",
+      "Hypothesis-only opportunity -> may be stored for research only, never marked as a confirmed need or reached in outreach.",
+      "Known opt-out or do-not-contact restriction -> never prepare for outreach.",
+      "Missing location -> geographic_relevance scores zero; a missing city must never raise the total."
+    ],
+    "buying_intent_rule": "Buying intent receives no credit unless supported by evidence. A high service-fit score never compensates for the complete absence of a relevant opportunity signal.",
+    "category_rule": "A business category alone is never evidence of need. 'It is an agency, so it needs automation' is a hypothesis and must be recorded as one.",
+    "interpretation": "The total is a ranking aid, not a probability of conversion."
+  },
+
+  "required_output_fields": [
+    "business_name",
+    "business_category",
+    "city",
+    "country",
+    "target_market",
+    "market_level",
+    "maps_url",
+    "website",
+    "contact_channel",
+    "email_verification",
+    "advertised_services",
+    "observed_evidence",
+    "evidence_source_urls",
+    "evidence_classification",
+    "potential_automation_opportunity",
+    "opportunity_classification",
+    "why_opportunity_fits",
+    "relevant_service",
+    "relevant_portfolio_proof",
+    "confirmed_pain",
+    "buying_intent_signal",
+    "score_service_fit",
+    "score_need_evidence",
+    "score_buying_intent",
+    "score_verification",
+    "score_contactability",
+    "score_geographic_relevance",
+    "score_weighted_total",
+    "classification",
+    "missing_information",
+    "next_research_step",
+    "outreach_angle"
+  ],
+  "output_rules": [
+    "Keep facts, inferences and unknowns separate.",
+    "Never fabricate values or source URLs.",
+    "Never fabricate contact names, job titles, email addresses, current projects, client relationships, technical stacks, pain points or buying intent.",
+    "Deduplicate against existing records in every already-searched market before saving a new lead.",
+    "Do not reuse the same outreach angle for every agency; personalize it from the specific services and evidence discovered."
+  ],
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit and no minimum. Return every qualified business and no unqualified ones, strongest verified evidence first. Zero qualified leads is an acceptable outcome. A smaller list of well-researched businesses beats a large list of generic leads."
+  }
+}

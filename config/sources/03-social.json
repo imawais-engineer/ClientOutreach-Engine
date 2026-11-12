@@ -1,0 +1,254 @@
+{
+  "id": "social",
+  "stage": 3,
+  "title": "Social media signals",
+  "enabled": true,
+  "kind": "social_signal",
+  "brain": "config/brain.json",
+  "note": "A business having an Instagram, Facebook or Threads account is not evidence that it needs automation. Posting frequently is not evidence of operational problems.",
+  "do_not_mix_with": ["google_maps", "job_boards"],
+  "do_not_mix_rule": "Social discoveries run as their own pass. They may merge into an existing lead from another source, but must not duplicate the business.",
+  "sources": [
+    "Instagram business posts, captions and publicly visible comments",
+    "Facebook business pages and public posts",
+    "Threads public posts and discussions",
+    "Public founder, owner or decision-maker posts",
+    "Public hiring announcements and requests for recommendations",
+    "Public discussions about business processes, tools, integrations and operational challenges"
+  ],
+  "platforms": ["Instagram", "Facebook", "Threads"],
+  "access_rules": [
+    "Respect platform terms, privacy settings, access restrictions and applicable laws.",
+    "Do not bypass login restrictions, scrape private content or collect unnecessary personal information.",
+    "Record the original post or profile URL whenever available.",
+    "Do not present inaccessible or unverified content as reviewed evidence."
+  ],
+  "evidence_tiers": {
+    "A": {
+      "level": 1,
+      "name": "Direct evidence",
+      "examples": [
+        "A business publicly asks for help automating a workflow",
+        "An owner requests recommendations for connecting two business tools",
+        "A company states it needs a WhatsApp chatbot or CRM integration",
+        "A founder describes a repetitive process and asks how to streamline it",
+        "A business announces a project requiring AI agents, workflow automation or data integration"
+      ],
+      "caveat": "The strongest signals, but they still do not prove the business will hire an external provider."
+    },
+    "B": {
+      "level": 2,
+      "name": "Specific operational evidence",
+      "examples": [
+        "A business publicly describes handling a high volume of repetitive customer inquiries",
+        "An owner discusses difficulty managing inquiries from multiple channels",
+        "A company describes manual lead tracking or repeated spreadsheet work",
+        "A business asks for ways to improve appointment intake, lead qualification or customer follow-up"
+      ],
+      "caveat": "Record the exact observable statement and its source. Treat the proposed automation as a hypothesis unless the business explicitly requests a solution."
+    },
+    "C": {
+      "level": 3,
+      "name": "Contextual signals",
+      "examples": [
+        "An e-commerce business actively promotes products through social media",
+        "A clinic publishes appointment-related content",
+        "A real estate agency advertises property listings",
+        "A marketing agency offers lead generation or customer acquisition services"
+      ],
+      "caveat": "Establishes business context only, not a pain point or buying intent. Tier C leads must not be described as having a confirmed automation need. Investigate further or deprioritise."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "note": "Stored in the shared evidence_level column as direct/plausible/weak; the raw A/B/C tier stays in details."
+  },
+  "research_procedure": [
+    "Identify the business and its official social profile.",
+    "Locate a specific public post or statement relevant to a supported service.",
+    "Open and inspect the original content when accessible.",
+    "Record the post URL, date if available, and a concise factual summary.",
+    "Separate the business's actual words from your interpretation.",
+    "Verify the business using its official website or another credible public source where possible.",
+    "Identify a specific workflow that could potentially be improved.",
+    "Match that workflow to one relevant service and one relevant portfolio example.",
+    "Assess whether there is a plausible route to a paid engagement.",
+    "Recommend a personalised next action."
+  ],
+  "no_signal_rule": "If you cannot find a specific operational signal, do not invent one. Mark the lead as contextual, unverified or unsuitable.",
+  "evidence_rules": {
+    "levels": {
+      "observed_evidence": "What the public post, website or announcement actually states.",
+      "opportunity_hypothesis": "How one of the services might help, based on the observed evidence.",
+      "confirmed_pain_or_intent": "A need explicitly stated by the business, or confirmed later through direct conversation."
+    },
+    "never_claim_unless_evidenced": [
+      "misses leads",
+      "responds slowly",
+      "loses customers",
+      "uses inefficient manual processes",
+      "needs a chatbot",
+      "wants to outsource automation"
+    ],
+    "never_invent": [
+      "quotations",
+      "post URLs",
+      "dates",
+      "tool usage",
+      "budgets",
+      "decision-maker identities"
+    ]
+  },
+  "service_menu": [
+    {
+      "group": "WhatsApp and messaging automation",
+      "items": [
+        "WhatsApp AI assistants",
+        "Knowledge-base-backed responses",
+        "Customer inquiry routing and intake"
+      ]
+    },
+    {
+      "group": "AI lead qualification and CRM automation",
+      "items": [
+        "Lead qualification and enrichment",
+        "Follow-up workflow automation",
+        "CRM integrations and webhook-based workflows"
+      ]
+    },
+    {
+      "group": "Customer support and inbox automation",
+      "items": [
+        "AI-assisted email categorization",
+        "Support triage and response assistance",
+        "Knowledge-base-backed support workflows"
+      ]
+    },
+    {
+      "group": "Business workflow automation",
+      "items": [
+        "n8n and Make workflows",
+        "Python scripts, APIs and webhooks",
+        "Data extraction, transformation and reporting",
+        "AI agents and MCP integrations"
+      ]
+    },
+    {
+      "group": "AI knowledge retrieval",
+      "items": [
+        "RAG systems",
+        "Document-based knowledge assistants",
+        "Search across business knowledge sources"
+      ]
+    },
+    {
+      "group": "Website and landing-page development",
+      "items": [
+        "Only when the business has an identifiable website-related need and the project fits actual development capabilities"
+      ]
+    }
+  ],
+  "claim_rule": "Do not claim expertise, certifications, integrations or production results that have not been verified.",
+  "portfolio_matching": {
+    "rule": "Use the closest relevant portfolio example, not the same example for every lead. Treat portfolio projects as evidence of implementation experience, not proof of measured commercial results.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "evidence_strength": {
+        "weight": 0.3,
+        "question": "Is there a specific, accessible, relevant public signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the signal match a service the engineer can actually deliver?"
+      },
+      "business_verification": {
+        "weight": 0.15,
+        "question": "Can the business be reliably identified?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is there a plausible paid project, pilot or recurring need?"
+      },
+      "contactability_personalization": {
+        "weight": 0.15,
+        "question": "Is there an appropriate public business contact channel and a specific reason to reach out?"
+      }
+    },
+    "gate": "A high score is a research priority, not proof of buying intent. A category match alone can never make a lead a high-confidence pain-point lead."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "business_type",
+    "country",
+    "city",
+    "social_platform",
+    "profile_url",
+    "post_url",
+    "post_date",
+    "observed_signal",
+    "evidence_tier",
+    "evidence_confidence",
+    "official_website",
+    "contact_channel",
+    "opportunity_hypothesis",
+    "confirmed_pain_or_intent",
+    "recommended_service",
+    "why_service_matches_evidence",
+    "portfolio_example",
+    "portfolio_url",
+    "commercial_suitability",
+    "evidence_gaps_and_unknowns",
+    "score_evidence",
+    "score_service_fit",
+    "score_business_verification",
+    "score_commercial_suitability",
+    "score_contactability_personalization",
+    "score_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "status"
+  ],
+  "missing_value_rule": "Do not fill missing fields with fabricated information. Use null, unknown or not verified as appropriate.",
+  "outreach_rules": [
+    "Every message references a genuine detail from the business's public content.",
+    "Explain why this particular business is being contacted.",
+    "Offer one specific, relevant service.",
+    "Suggest a small, clearly scoped initial project where appropriate.",
+    "Use a relevant portfolio example as proof of implementation experience.",
+    "Ask a low-friction question or propose a brief discussion.",
+    "Never send a pitch that could go unchanged to dozens of businesses.",
+    "Never pretend the business has a problem it has not disclosed.",
+    "Never imply you are applying for a job when offering a service.",
+    "If the signal is weak, recommend further research rather than immediate outreach."
+  ],
+  "dedupe": {
+    "check_against": ["google_maps", "job_boards", "social"],
+    "merge_rule": "Merge duplicate records where appropriate while preserving separate source URLs and evidence.",
+    "new_post_rule": "A new social post from an existing business may strengthen its evidence record but should not create a duplicate lead."
+  },
+  "feedback_outcomes": [
+    "not_contacted",
+    "contacted",
+    "replied",
+    "not_interested",
+    "asked_for_details",
+    "referred_to_another_person",
+    "discovery_call_booked",
+    "open_to_contractor",
+    "paid_pilot_proposed",
+    "won",
+    "lost"
+  ],
+  "silence_rule": "Do not treat silence as proof that the business has no need.",
+  "operating_principle": "Find the signal first. Verify the business second. Form the opportunity hypothesis third. Score the evidence fourth. Personalize outreach last.",
+  "empty_result_rule": "If no relevant signal exists, return no qualified lead rather than manufacturing a business need to fill the dashboard.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every lead with a specific signal and no contextual-only ones."
+  }
+}

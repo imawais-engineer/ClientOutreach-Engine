@@ -1,0 +1,247 @@
+{
+  "id": "websites",
+  "stage": 4,
+  "title": "Business websites and contact pages",
+  "enabled": true,
+  "kind": "website_signal",
+  "brain": "config/brain.json",
+  "note": "A website establishes business context. It does not automatically establish business pain or buying intent.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social"],
+  "do_not_mix_rule": "Website research runs as its own pass. It may deepen an existing lead from another source, but must not duplicate the business.",
+  "sources": [
+    "Official business websites",
+    "Services and product pages",
+    "Contact pages and published business email addresses",
+    "FAQs and customer-support pages",
+    "Appointment booking and inquiry forms",
+    "Public pricing and service packages",
+    "Public case studies and announcements",
+    "Publicly documented integrations and technology requirements",
+    "Public careers pages and project requests"
+  ],
+  "access_rules": [
+    "Respect website terms, access restrictions, privacy requirements and applicable laws.",
+    "Do not bypass authentication, CAPTCHAs or technical restrictions.",
+    "Do not submit forms, create accounts or trigger transactions during research.",
+    "Record source URLs for material claims.",
+    "If a page cannot be accessed, mark it unverified rather than inferring its contents."
+  ],
+  "claim_restrictions": [
+    "Do not claim to have audited a website's backend, database, CRM or analytics unless there is authorized evidence of those systems.",
+    "Do not label a website slow, insecure, broken, poorly converting or technically deficient without testing that supports the specific claim."
+  ],
+  "service_menu": [
+    {
+      "group": "A. WhatsApp and customer messaging automation",
+      "items": [
+        "AI assistants connected to business knowledge",
+        "Customer inquiry intake and routing",
+        "Messaging workflows and supported integrations"
+      ]
+    },
+    {
+      "group": "B. Lead qualification and CRM automation",
+      "items": [
+        "Lead intake, qualification and enrichment",
+        "Follow-up workflows",
+        "API and webhook integrations with CRM systems"
+      ]
+    },
+    {
+      "group": "C. Customer support and inbox automation",
+      "items": [
+        "AI email categorization",
+        "Support triage and response assistance",
+        "Knowledge-base-backed customer support"
+      ]
+    },
+    {
+      "group": "D. Business workflow automation",
+      "items": [
+        "n8n and Make workflows",
+        "Python scripts, APIs and webhooks",
+        "Data extraction, processing and reporting",
+        "AI agents and MCP integrations"
+      ]
+    },
+    {
+      "group": "E. Knowledge-base and RAG systems",
+      "items": [
+        "Document-based assistants",
+        "Search and retrieval across business knowledge",
+        "AI-assisted access to internal information"
+      ]
+    },
+    {
+      "group": "F. Website and landing-page development",
+      "items": [
+        "Website or landing-page implementation",
+        "Relevant form, API and automation integrations",
+        "Improvements tied to an observable business requirement"
+      ]
+    }
+  ],
+  "service_rule": "Do not recommend a service simply because it is technically possible. Establish a connection between the business evidence and the proposed solution.",
+  "signals": {
+    "A": {
+      "name": "Explicit requirement",
+      "examples": [
+        "The business requests a developer to integrate its website with a CRM",
+        "A public project brief asks for automated customer intake",
+        "The company states it wants to deploy a chatbot or automate a documented process",
+        "A business requests a website redesign or new landing page"
+      ],
+      "caveat": "Strong evidence of a stated requirement, but not necessarily a commitment to purchase from an external freelancer."
+    },
+    "B": {
+      "name": "Observable workflow opportunity",
+      "examples": [
+        "A website provides a contact form and publicly documents a multistep inquiry process",
+        "The business supports appointment booking and has an identifiable intake integration requirement",
+        "A company publicly documents several disconnected customer-contact channels",
+        "A business describes repetitive information collection or data processing"
+      ],
+      "caveat": "Record what is actually observable. A form, booking system or several contact channels alone does not prove the current process is inefficient."
+    },
+    "C": {
+      "name": "Contextual business fit",
+      "examples": [
+        "A clinic offers appointments",
+        "An e-commerce business sells products online",
+        "A real estate agency collects property inquiries",
+        "A digital agency offers marketing or website development services"
+      ],
+      "caveat": "Useful for identifying a relevant service, but not sufficient evidence of an unmet need. Continue researching or classify the opportunity as unverified."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "note": "Signal C alone stays unverified and is not saved as a qualified lead."
+  },
+  "research_workflow": [
+    "Verify the business name and official domain.",
+    "Review its homepage and relevant service pages.",
+    "Inspect publicly accessible contact, FAQ, booking and support pages when relevant.",
+    "Identify specific, observable workflows or explicitly stated requirements.",
+    "Record the exact page URL supporting each material observation.",
+    "Separate observations from inferred opportunities.",
+    "Look for a relevant project, service requirement or credible commercial trigger.",
+    "Match one proposed service to one relevant portfolio example.",
+    "Identify a legitimate public business contact channel.",
+    "Decide whether outreach is justified now or additional evidence is required."
+  ],
+  "evidence_classification": {
+    "observed_fact": "Directly visible or explicitly stated on a cited public page.",
+    "opportunity_hypothesis": "A possible way a service could help, derived from the observed fact.",
+    "confirmed_requirement": "A business requirement explicitly stated by an authorized business representative or in a verifiable project brief.",
+    "confirmed_buying_intent": "Evidence that the business is considering or willing to procure the relevant service.",
+    "rules": [
+      "Use these labels consistently.",
+      "Never present an opportunity hypothesis as confirmed pain or buying intent.",
+      "Do not infer buying intent merely from the existence of a requirement."
+    ]
+  },
+  "portfolio_matching": {
+    "rule": "Select the closest relevant project. If none is relevant, state that no close portfolio match was found.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "evidence_strength": {
+        "weight": 0.3,
+        "question": "Is there a specific, verifiable requirement or workflow signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the evidence match an actual service the engineer can deliver?"
+      },
+      "business_verification": {
+        "weight": 0.15,
+        "question": "Is the business and its official domain verified?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is a paid project or pilot plausible based on the available evidence?"
+      },
+      "contactability_personalization": {
+        "weight": 0.15,
+        "question": "Is there a suitable public business contact channel and a specific outreach reason?"
+      }
+    },
+    "gate": "These thresholds prioritise research; they do not predict conversion. A generic website with no relevant workflow evidence must not receive a high evidence score merely because it belongs to a suitable industry."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "business_category",
+    "country",
+    "city",
+    "official_website_url",
+    "relevant_page_urls",
+    "contact_channel",
+    "business_services_and_target_customers",
+    "observed_website_features_or_stated_requirements",
+    "evidence_classification",
+    "evidence_summary",
+    "opportunity_hypothesis",
+    "confirmed_requirement",
+    "confirmed_buying_intent",
+    "relevant_service",
+    "why_service_fits_evidence",
+    "portfolio_project",
+    "portfolio_url",
+    "commercial_suitability",
+    "evidence_gaps_and_unknowns",
+    "score_evidence_strength",
+    "score_service_fit",
+    "score_business_verification",
+    "score_commercial_suitability",
+    "score_contactability_personalization",
+    "score_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "lead_status"
+  ],
+  "missing_value_rule": "Use unknown or null for unavailable information. Never fabricate website content, contact details, budgets, pain points or decision-maker identities.",
+  "outreach_requirements": {
+    "write_only_when": "There is a defensible reason to contact the business.",
+    "message_must": [
+      "Reference a specific, genuine detail from the business website",
+      "Explain a relevant potential improvement without asserting an unverified problem",
+      "Offer one clearly scoped service or small pilot",
+      "Include a relevant portfolio example when useful",
+      "Ask a concise, low-friction question"
+    ],
+    "message_must_not": [
+      "Use the same generic pitch for every business in a category",
+      "State the business is losing leads, responding slowly or wasting staff time without evidence"
+    ],
+    "weak_evidence_rule": "If the evidence is contextual rather than specific, recommend further research before outreach."
+  },
+  "dedupe": {
+    "check_against": ["google_maps", "job_boards", "social", "websites"],
+    "merge_rule": "Merge records for the same business where appropriate while retaining distinct source URLs and evidence.",
+    "additional_evidence_rule": "Additional website evidence may strengthen an existing record without creating a duplicate."
+  },
+  "feedback_outcomes": [
+    "not_contacted",
+    "contacted",
+    "replied",
+    "not_interested",
+    "asked_for_details",
+    "discovery_call_booked",
+    "open_to_contractor",
+    "paid_pilot_proposed",
+    "won",
+    "lost"
+  ],
+  "silence_rule": "Do not treat a lack of response as confirmation that the business has no need.",
+  "operating_principle": "Verify the business. Inspect the relevant pages. Record the evidence. Form a bounded opportunity hypothesis. Match the service. Then decide whether outreach is justified.",
+  "empty_result_rule": "Never manufacture a pain point to increase lead counts.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified business and no unqualified ones."
+  }
+}

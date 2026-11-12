@@ -1,0 +1,248 @@
+{
+  "id": "directories",
+  "stage": 5,
+  "title": "Business directories and professional networks",
+  "enabled": true,
+  "kind": "directory_signal",
+  "brain": "config/brain.json",
+  "note": "A verified company is not automatically a qualified lead. A contactable person is not automatically a buyer.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social", "websites"],
+  "do_not_mix_rule": "Directory research runs as its own pass. It updates an existing business record rather than creating a second one.",
+  "objective": [
+    "A verifiable identity and legitimate business activity",
+    "A plausible fit for actual services",
+    "A relevant commercial opportunity or reason for further investigation",
+    "An appropriate, publicly available business contact channel"
+  ],
+  "not_the_objective": "Collecting as many company names or email addresses as possible.",
+  "sources": [
+    "Business directories and industry directories",
+    "Professional company profiles",
+    "Public LinkedIn company pages and professional posts",
+    "Founder and owner profiles when publicly accessible",
+    "Startup and agency directories",
+    "Public business association member directories",
+    "Publicly listed partner and vendor directories",
+    "Public business contact pages",
+    "Public project listings and professional service requests"
+  ],
+  "platform_examples": ["LinkedIn", "local business directories", "startup directories", "professional association websites"],
+  "access_rules": [
+    "Use permitted access methods and respect platform terms, privacy requirements and rate limits.",
+    "Do not bypass access controls.",
+    "Do not collect unnecessary personal information."
+  ],
+  "discovery_categories": [
+    "Digital marketing and lead-generation agencies",
+    "Web development and software agencies",
+    "CRM implementation and business automation providers",
+    "E-commerce businesses and service providers",
+    "Real estate businesses",
+    "Clinics and appointment-based service businesses",
+    "Customer support and business process service providers",
+    "Small and medium-sized businesses with identifiable integration needs",
+    "Startups seeking implementation support"
+  ],
+  "agency_rule": "For agencies, investigate whether white-label implementation or overflow technical capacity is a plausible offer.",
+  "direct_business_rule": "For direct businesses, investigate whether publicly documented services, workflows or stated requirements create a relevant automation opportunity.",
+  "industry_membership_rule": "Industry membership alone is not evidence of demand.",
+  "decision_maker": {
+    "roles": [
+      "Founder or co-founder",
+      "Business owner",
+      "Managing director",
+      "Agency owner",
+      "Head of operations",
+      "Operations manager",
+      "Sales operations or CRM lead",
+      "Technical lead",
+      "Project manager responsible for implementation",
+      "Relevant procurement or partnerships contact"
+    ],
+    "rules": [
+      "Match the role to the service being offered; the most senior person is not always the best contact.",
+      "Use only publicly documented professional roles and business contact channels.",
+      "Do not invent names, job titles, email addresses, phone numbers or reporting relationships.",
+      "If the decision-maker cannot be verified, record the company-level contact channel and mark the individual contact as unknown.",
+      "A contact's professional relationship to the business must be verified before it is recorded."
+    ]
+  },
+  "evidence_levels": {
+    "A": {
+      "name": "Explicit commercial signal",
+      "examples": [
+        "A public request for an automation implementation partner",
+        "A company seeking an external developer for a relevant project",
+        "A founder requesting recommendations for a specific integration",
+        "An agency advertising a need for contractors or implementation capacity"
+      ]
+    },
+    "B": {
+      "name": "Specific operational or technical evidence",
+      "examples": [
+        "The business publicly documents a particular integration requirement",
+        "A company describes a relevant operational workflow and asks for solutions",
+        "An agency lists services that closely complement implementation capabilities and publicly invites technical partners"
+      ]
+    },
+    "C": {
+      "name": "Verified business with plausible service fit",
+      "examples": [
+        "An established agency provides CRM implementation services",
+        "An e-commerce business operates a public online store",
+        "A clinic offers online appointments"
+      ],
+      "caveat": "Discovery signals, not proof of an unmet need."
+    },
+    "D": {
+      "name": "Weak or unverifiable lead",
+      "examples": [
+        "An incomplete profile with no reliable business identity",
+        "An inactive or unverified directory listing",
+        "A company with no clear fit for supported services",
+        "A contact whose role or association with the business cannot be established"
+      ],
+      "caveat": "Not saved as a lead."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "D": "not saved",
+    "note": "Do not promote a Level C or D prospect to high-intent status merely because it matches an industry category."
+  },
+  "research_workflow": [
+    "Discover the business through a relevant directory or professional network.",
+    "Verify the official business name and website.",
+    "Confirm its location and business category when available.",
+    "Review its publicly described services and target customers.",
+    "Search for relevant commercial or operational signals.",
+    "Identify an appropriate business decision-maker if possible.",
+    "Verify the person's professional relationship to the business.",
+    "Identify a legitimate public business contact channel.",
+    "Match the potential opportunity to one supported service.",
+    "Select the closest relevant portfolio project.",
+    "Check for existing records in ClientOutreach.",
+    "Score the prospect and recommend the next action."
+  ],
+  "insufficient_evidence_rule": "When evidence is insufficient, return the candidate as unqualified or requiring further research.",
+  "portfolio_matching": {
+    "rule": "Use the most relevant verified project, explain why it is relevant, and never attach the same example to every lead.",
+    "examples_ref": "brain.portfolio_examples",
+    "claim_restriction": "Do not claim measured ROI, revenue improvements or production outcomes unless supporting evidence exists."
+  },
+  "scoring": {
+    "dimensions": {
+      "commercial_signal": {
+        "weight": 0.3,
+        "question": "Is there a specific requirement or meaningful opportunity signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the opportunity align with actual capabilities?"
+      },
+      "business_legitimacy": {
+        "weight": 0.15,
+        "question": "Is the organization reliably verified?"
+      },
+      "contactability": {
+        "weight": 0.15,
+        "question": "Is there an appropriate, verified route to contact?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is a paid pilot, project or recurring engagement plausible?"
+      }
+    },
+    "gate": "A score represents research priority, not conversion probability. A directory listing alone must not generate a high commercial-signal score."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "business_category",
+    "country",
+    "city",
+    "directory_or_network_source",
+    "source_profile_url",
+    "official_website",
+    "business_verification_status",
+    "publicly_documented_services",
+    "relevant_commercial_signal",
+    "evidence_level",
+    "supporting_source_urls",
+    "observed_facts",
+    "opportunity_hypothesis",
+    "confirmed_requirement",
+    "confirmed_buying_intent",
+    "recommended_service",
+    "relevant_portfolio_example",
+    "portfolio_url",
+    "decision_maker_name",
+    "decision_maker_role",
+    "evidence_supporting_role",
+    "public_business_contact_channel",
+    "contact_verification_status",
+    "commercial_suitability",
+    "missing_information",
+    "score_commercial_signal",
+    "score_service_fit",
+    "score_business_legitimacy",
+    "score_contactability",
+    "score_commercial_suitability",
+    "score_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "existing_record_id",
+    "lead_status"
+  ],
+  "missing_value_rule": "Use unknown or null for unavailable data. Never fabricate missing details.",
+  "outreach_rules": {
+    "preconditions": [
+      "Why this specific business is relevant",
+      "Which supported service is most appropriate",
+      "What evidence justifies contacting it now",
+      "Why the recipient is an appropriate contact",
+      "What small, practical first engagement could be proposed"
+    ],
+    "agency_offer": "Consider a white-label implementation or overflow delivery proposal when the evidence supports it.",
+    "direct_offer": "Focus on a specific, evidence-backed workflow opportunity.",
+    "must_not": [
+      "Claim a company needs automation merely because it operates in a suitable industry",
+      "Misrepresent the sender as a job applicant, existing partner or referred contact",
+      "Contact the same unresponsive prospect repeatedly"
+    ],
+    "channel_rule": "Use concise, individualized outreach on appropriate business channels and respect opt-outs."
+  },
+  "dedupe": {
+    "check_against": ["google_maps", "social", "job_boards", "websites", "directories"],
+    "match_on": ["verified domain", "business name", "other reliable identifiers"],
+    "rules": [
+      "Maintain one primary business record.",
+      "Preserve each source URL separately.",
+      "Combine independent evidence without conflating it.",
+      "Update the existing record rather than creating a duplicate.",
+      "Keep individual contacts distinct from the business entity."
+    ]
+  },
+  "feedback_outcomes": [
+    "not_contacted",
+    "contacted",
+    "replied",
+    "not_interested",
+    "asked_for_details",
+    "referred_to_another_contact",
+    "discovery_call_booked",
+    "open_to_contractor",
+    "paid_pilot_proposed",
+    "won",
+    "lost"
+  ],
+  "learning_rule": "Use outcomes to improve the scoring model. Do not infer interest from a message being delivered or viewed.",
+  "operating_principle": "Verify the organization. Identify the relevant role. Find a credible commercial signal. Match it to an actual service. Then decide whether to contact the prospect.",
+  "preference_rule": "Prefer fewer, better-qualified opportunities over large lists of unverified companies and contacts.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified business and no unqualified ones."
+  }
+}

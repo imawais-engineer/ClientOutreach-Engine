@@ -1,0 +1,180 @@
+{
+  "id": "referrals",
+  "stage": 6,
+  "title": "Referrals, communities and partnerships",
+  "enabled": true,
+  "kind": "relationship_signal",
+  "brain": "config/brain.json",
+  "note": "Community membership alone is not evidence of demand. A warm introduction is not an endorsement unless the introducer makes it one.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social", "websites", "directories"],
+  "objective": "Discover potential clients through business communities, professional groups, referrals and partnerships, prioritizing warm introductions and explicit requests for help over generic member lists.",
+  "platform_values": ["Community", "Referral", "Partnership"],
+  "sources": [
+    "Local business communities and entrepreneur groups",
+    "Startup and technology communities",
+    "Professional networking groups",
+    "Public founder and business-owner discussions",
+    "Public requests for technical recommendations",
+    "Business association directories and networking events",
+    "Agency partnership and subcontracting opportunities",
+    "Referral opportunities from existing professional contacts",
+    "Public community posts asking for developers, automation specialists or implementation partners"
+  ],
+  "access_rules": [
+    "Respect community rules, platform terms, privacy settings and applicable laws.",
+    "Do not access private groups or member information without authorization."
+  ],
+  "services": [
+    "n8n and Make workflow automation",
+    "Python, APIs and webhook integrations",
+    "AI agents and MCP integrations",
+    "WhatsApp AI assistants and customer inquiry workflows",
+    "AI-assisted email and customer support triage",
+    "Lead qualification and CRM automation",
+    "Data extraction, transformation and reporting",
+    "RAG and knowledge-base assistants",
+    "Relevant website and landing-page development"
+  ],
+  "priority_tiers": {
+    "A": {
+      "name": "Direct opportunity",
+      "examples": [
+        "A business owner requests an automation developer",
+        "A founder asks for recommendations for a specific integration",
+        "A business seeks an AI implementation partner",
+        "An agency publicly requests subcontractors or white-label delivery support",
+        "A trusted contact explicitly offers to introduce a relevant buyer"
+      ]
+    },
+    "B": {
+      "name": "Relevant discussion",
+      "examples": [
+        "A business owner describes a specific repetitive workflow",
+        "A founder discusses an identifiable integration challenge",
+        "An agency discusses capacity constraints relevant to the services",
+        "A community member seeks advice about a supported technical problem"
+      ]
+    },
+    "C": {
+      "name": "General networking",
+      "examples": [
+        "A business owner joins a community",
+        "A company attends a networking event",
+        "A founder publishes general growth content",
+        "A group member operates in a relevant industry but expresses no relevant need"
+      ],
+      "caveat": "A networking opportunity, not a qualified sales lead."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "note": "Tier C alone is not admitted as a qualified lead."
+  },
+  "research_procedure": [
+    "Record the community, group, event or referral source.",
+    "Capture the original public post or event URL where available.",
+    "Identify the actual request, discussion or introduction.",
+    "Verify the associated business.",
+    "Identify the relevant decision-maker, if verifiable.",
+    "Match the request to one supported service.",
+    "Select a relevant portfolio example.",
+    "Determine whether the opportunity is a direct project, referral or partnership.",
+    "Record the appropriate contact method.",
+    "Check for duplicates in ClientOutreach."
+  ],
+  "integrity_rules": [
+    "Do not invent referrals.",
+    "Do not claim mutual connections without evidence.",
+    "Do not imply an endorsement that was not given.",
+    "Ask permission before using someone's name or claiming an introduction."
+  ],
+  "partnership_evaluation": {
+    "questions": [
+      "What services does the partner publicly document?",
+      "Do the capabilities complement theirs?",
+      "Do they publicly seek technical partners or subcontractors?",
+      "Is white-label delivery a plausible fit?",
+      "Could the partnership lead to defined paid projects?"
+    ],
+    "do_not_assume": "Do not assume an agency needs subcontractors simply because it offers digital services."
+  },
+  "portfolio_matching": {
+    "rule": "Use only a project that supports the proposed service; do not invent measured results.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "opportunity_signal": {
+        "weight": 0.3,
+        "question": "How strong is the referral or opportunity signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the request match a service that can actually be delivered?"
+      },
+      "business_verification": {
+        "weight": 0.15,
+        "question": "Is the associated business verified?"
+      },
+      "relationship_and_contactability": {
+        "weight": 0.15,
+        "question": "Is there a trusted route to the right person?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is a paid engagement plausible?"
+      }
+    },
+    "gate": "An explicit request or genuine warm introduction must score higher than a generic community membership. The score is research priority, not guaranteed conversion."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "website",
+    "community_or_referral_or_partnership_source",
+    "source_url_and_date",
+    "observed_request_or_discussion",
+    "evidence_classification",
+    "opportunity_type",
+    "relevant_service",
+    "portfolio_project",
+    "decision_maker_and_verification_status",
+    "contact_method",
+    "commercial_suitability",
+    "evidence_gaps",
+    "dimension_scores_and_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "existing_record_id",
+    "lead_status"
+  ],
+  "missing_value_rule": "Use unknown or null for unavailable details.",
+  "outreach_rules": {
+    "direct": "Reference the actual request and propose a relevant solution.",
+    "partnership": "Explain how implementation capabilities could complement the partner's existing services.",
+    "referral": "Ask permission before using someone's name or claiming an introduction.",
+    "must_not": [
+      "Mass-message community members",
+      "Send unsolicited promotional posts where prohibited",
+      "Misrepresent a relationship"
+    ]
+  },
+  "feedback_outcomes": [
+    "introduction_requested",
+    "introduction_made",
+    "referred_to_decision_maker",
+    "partnership_discussion_started",
+    "discovery_call_booked",
+    "paid_pilot_proposed",
+    "won",
+    "lost",
+    "not_interested"
+  ],
+  "operating_principle": "Prioritize genuine requests, trusted introductions and complementary partnerships. Community membership alone is not evidence of demand.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified opportunity and no unqualified ones."
+  }
+}

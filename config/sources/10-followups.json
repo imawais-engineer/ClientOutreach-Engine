@@ -1,0 +1,224 @@
+{
+  "id": "followups",
+  "stage": 10,
+  "title": "Existing leads, follow-ups and re-engagement",
+  "enabled": true,
+  "kind": "existing_leads",
+  "brain": "config/brain.json",
+  "note": "This source discovers nothing. It works the pipeline that the other nine produced, and it may recommend no contact at all.",
+  "adds_no_platform_value": true,
+  "objective": "Convert existing prospect records into a disciplined, evidence-based outreach pipeline.",
+  "responsibilities": [
+    "Which leads are worth contacting",
+    "Which contacts require a follow-up",
+    "Which conversations need a response",
+    "Which prospects should be paused or closed",
+    "Which new evidence changes a lead's priority",
+    "Which outreach patterns produce genuine business opportunities"
+  ],
+  "source_of_truth": {
+    "review": [
+      "Existing lead records",
+      "Original source URLs",
+      "Previous research and evidence",
+      "Contact history",
+      "Outreach messages and timestamps",
+      "Replies and objections",
+      "Current lead status",
+      "Scheduled next actions",
+      "Previous scores and reasons for qualification",
+      "Opt-out and do-not-contact records"
+    ],
+    "rule": "Do not invent prior conversations, replies, messages, contact dates or consent. If communication history is unavailable, state that it cannot be verified."
+  },
+  "lifecycle": [
+    "discovered",
+    "researching",
+    "qualified",
+    "ready_for_outreach",
+    "contacted",
+    "replied",
+    "discovery_discussion",
+    "proposal_or_pilot",
+    "won",
+    "lost",
+    "nurture",
+    "disqualified",
+    "do_not_contact"
+  ],
+  "status_semantics": {
+    "rule": "Retain the statuses the interface needs, but define their meanings consistently.",
+    "applied": "A real application submitted to a project or role (Source 07), never a generic sales message sent to a business.",
+    "hidden": "A view flag, not a lifecycle state. It hides a lead from the default list without changing its qualification.",
+    "do_not_contact": "Suppresses all future outreach, regardless of score.",
+    "never_change_without_evidence": ["won", "contacted"]
+  },
+  "reassessment": {
+    "steps": [
+      "Verify the current record and business identity.",
+      "Review all linked evidence.",
+      "Check whether the opportunity is still relevant.",
+      "Review previous outreach and replies.",
+      "Determine whether the lead is eligible for another contact.",
+      "Identify the next useful action.",
+      "Update the score only when supported by new evidence.",
+      "Preserve the history of prior decisions."
+    ],
+    "rules": [
+      "Do not increase scores merely because a lead has remained in the database for a long time.",
+      "Do not decrease a score solely because a message has not received a reply."
+    ]
+  },
+  "follow_up_eligibility": [
+    "A previous contact actually occurred",
+    "The contact channel and date are known",
+    "The prospect has not opted out",
+    "There is no explicit rejection that makes further contact inappropriate",
+    "No duplicate outreach is already pending",
+    "The follow-up is consistent with applicable laws and platform rules",
+    "There is a legitimate reason to contact the prospect again"
+  ],
+  "eligibility_rule": "If the previous message, contact date or status cannot be verified, recommend reviewing the record rather than assuming a follow-up is due.",
+  "follow_up_reasons": [
+    "Answering a question the prospect asked",
+    "Providing a requested portfolio example",
+    "Clarifying a previously discussed scope",
+    "Responding to a new, relevant public requirement",
+    "Following up on a proposal at an agreed time",
+    "Offering a useful clarification about a proposed pilot"
+  ],
+  "message_rules": {
+    "must": [
+      "Reference the actual previous interaction",
+      "Address an outstanding question or provide a relevant next step",
+      "Stay concise and personalized",
+      "Avoid unsupported claims",
+      "Include one clear question or action",
+      "Respect the prospect's expressed preferences"
+    ],
+    "must_not": [
+      "Repeat the same pitch",
+      "Manufacture urgency or imply a deadline that does not exist",
+      "Use false claims about prior discussions"
+    ],
+    "interval_rule": "Use reasonable intervals based on the previous interaction, any agreed follow-up date, the channel and applicable rules. Do not assume every lead should receive the same number of messages.",
+    "first_contact_rule": "If no prior interaction exists, create a first-contact message rather than labeling it a follow-up."
+  },
+  "reply_classification": [
+    "interested",
+    "requests_more_information",
+    "requests_portfolio_or_examples",
+    "requests_pricing",
+    "requests_proposal",
+    "refers_to_another_decision_maker",
+    "not_now",
+    "not_interested",
+    "explicit_opt_out",
+    "irrelevant_or_automated",
+    "unclear_requires_human_review"
+  ],
+  "reply_rule": "Do not classify an ambiguous response as positive buying intent. Extract the prospect's actual requirements and questions without adding unsupported assumptions.",
+  "commercial_qualification": {
+    "record": [
+      "The requested service",
+      "The problem or desired outcome",
+      "The decision-maker",
+      "Project scope",
+      "Budget, if disclosed",
+      "Timeline, if disclosed",
+      "Technical requirements",
+      "Next agreed action"
+    ],
+    "unknown_rule": "Mark undisclosed details as unknown. Do not guess a budget, deadline or purchasing authority from company size or industry.",
+    "clarify_rule": "Use direct clarification when an important qualification detail is missing."
+  },
+  "re_engagement": {
+    "reconsider_when": [
+      "New evidence reveals a relevant requirement",
+      "The business publishes a suitable project request",
+      "A new decision-maker becomes publicly identifiable",
+      "The prospect previously invited a follow-up",
+      "A relevant service or portfolio example has become available"
+    ],
+    "rule": "Do not re-engage indefinitely without a credible reason. A closed-lost opportunity may be reconsidered when circumstances materially change, but retain the prior outcome and explain the new evidence."
+  },
+  "scoring": {
+    "dimensions": {
+      "current_service_fit": {
+        "weight": 0.25,
+        "question": "Does the lead still match a deliverable service?"
+      },
+      "evidence_of_need_or_intent": {
+        "weight": 0.25,
+        "question": "Is there evidence of need or buying intent?"
+      },
+      "engagement_progress": {
+        "weight": 0.2,
+        "question": "How far has the conversation actually progressed?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is a paid engagement plausible?"
+      },
+      "recency_and_next_action": {
+        "weight": 0.15,
+        "question": "Is the next action recent and relevant?"
+      }
+    },
+    "gate": "Interpret the score together with the lifecycle status. A high-scoring lead that opted out must never be contacted. Message opens and profile views are not purchase intent; replies, explicit requests, agreed meetings and defined requirements are stronger."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "current_status",
+    "original_discovery_source",
+    "evidence_summary",
+    "last_verified_interaction",
+    "last_contact_date_if_known",
+    "last_message_summary_if_available",
+    "reply_classification_if_applicable",
+    "current_opportunity_hypothesis",
+    "confirmed_requirement_or_intent",
+    "contact_eligibility",
+    "opt_out_status",
+    "previous_outcome",
+    "updated_qualification_scores_and_justification",
+    "recommended_next_action",
+    "reason_for_the_action",
+    "suggested_follow_up_message_if_appropriate",
+    "next_follow_up_date_only_when_justified",
+    "required_human_review",
+    "change_log_summary"
+  ],
+  "missing_value_rule": "Do not invent historical data. Use unknown or null where appropriate.",
+  "message_generation": {
+    "rules": [
+      "Reference the actual previous interaction",
+      "Address an outstanding question or provide a relevant next step",
+      "Be concise and personalized",
+      "Avoid unsupported claims",
+      "Include one clear question or action",
+      "Respect the prospect's expressed preferences"
+    ],
+    "sending": "Do not send messages automatically unless an authorized sending workflow explicitly permits it. Human approval stays available before any external communication."
+  },
+  "funnel_metrics": [
+    "qualified_leads",
+    "outreach_messages_sent",
+    "replies",
+    "positive_replies",
+    "discovery_calls",
+    "proposals",
+    "paid_pilots",
+    "won_deals",
+    "lost_deals",
+    "opt_outs",
+    "time_and_cost_per_result"
+  ],
+  "funnel_rule": "Evaluate conversion by source, service, evidence level and outreach approach. Never optimise for lead volume, message volume or vanity metrics at the expense of relevant conversations.",
+  "operating_principle": "The goal is not to keep contacting every lead. It is to advance suitable opportunities, learn from real responses, and stop contacting prospects when further outreach is inappropriate.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Review every eligible lead; recommend no contact where contact is not justified."
+  }
+}

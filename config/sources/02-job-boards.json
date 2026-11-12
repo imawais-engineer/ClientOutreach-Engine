@@ -1,0 +1,189 @@
+{
+  "id": "job_boards",
+  "stage": 2,
+  "title": "Job boards and hiring signals",
+  "enabled": true,
+  "kind": "hiring_signal",
+  "brain": "config/brain.json",
+  "note": "A job advertisement is not automatically a buying signal. The employer's actual responsibilities are the evidence, not the job title.",
+  "do_not_mix_with": ["google_maps", "social"],
+  "do_not_mix_rule": "Keep job-board discoveries separate from Google Maps leads in the same run. Records may link when the same business appears in both sources, but must not duplicate the business.",
+  "sources": [
+    "Public job boards",
+    "Company careers pages",
+    "Publicly accessible employer hiring announcements",
+    "Job listing search engines, where access is permitted"
+  ],  "geography": {
+    "targeting": "explicit",
+    "default_market": null,
+    "pilot_markets": ["US", "GB", "CA", "AU"],
+    "active_markets": ["US", "GB", "CA", "AU"],
+    "markets": {
+      "US": { "country_code": "US", "country": "United States", "level": "country", "region": "North America" },
+      "GB": { "country_code": "GB", "country": "United Kingdom", "level": "country", "region": "Europe" },
+      "CA": { "country_code": "CA", "country": "Canada", "level": "country", "region": "North America" },
+      "AU": { "country_code": "AU", "country": "Australia", "level": "country", "region": "Oceania" }
+    },
+    "inference_rule": "The employer's location is an explicit discovery parameter. Never derive the target market from the operator's location, account locale, IP address or interface language.",
+    "no_default_rule": "There is no default market. An empty active_markets list must stop the run rather than fall back to any single city or country.",
+    "stored_fields_rule": "Store the employer's own location separately from the market it was discovered for. A remote-only posting with no employer location stays unknown; do not assign it a market.",
+    "verification_rule": "A business is only described as located in a market when evidence verifies it. Distinguish registered address, operating markets and service coverage.",
+    "unsupported_targeting_rule": "Where a board cannot filter by country, record the limitation rather than presenting unfiltered results as geographically complete.",
+    "remote_rule": "Include remote opportunities only when the employer is a plausible buyer of external automation services. Remote is a work-location attribute, not a market."
+  },
+  "job_families": [
+    "Sales operations and CRM administration",
+    "Lead research, enrichment, qualification and follow-up",
+    "Business operations and repetitive administrative processing",
+    "Spreadsheet reconciliation and recurring reporting",
+    "Data extraction and document processing",
+    "Customer support workflows and repeated enquiries",
+    "Appointment scheduling and lead routing",
+    "Workflow automation, AI integration and system integrations",
+    "E-commerce order and customer-service operations",
+    "Marketing operations and recurring campaign workflows"
+  ],
+  "search_rule": "Search by job responsibilities and workflow terms, not only job titles.",
+  "investigate_job_description": [
+    "Employer name",
+    "Original job title",
+    "Original job listing URL",
+    "Official employer website, if available",
+    "Job location and remote/on-site status",
+    "Date posted, if available",
+    "Specific responsibilities stated in the listing",
+    "Tools and systems mentioned",
+    "Repetitive tasks explicitly described",
+    "Relevant evidence excerpts or concise factual summaries",
+    "Potentially automatable workflow",
+    "Appropriate engineer service",
+    "Evidence source URLs",
+    "Unknowns and limitations"
+  ],
+  "evidence_levels": {
+    "direct": {
+      "level": 1,
+      "meaning": "The employer explicitly mentions workflow automation, AI integration, systems integration, repetitive processing or a closely related need.",
+      "research_priority": "highest"
+    },
+    "plausible": {
+      "level": 2,
+      "meaning": "The listing describes recurring manual tasks, repeated data entry, routine information processing or work across multiple systems.",
+      "research_priority": "careful assessment"
+    },
+    "weak": {
+      "level": 3,
+      "meaning": "The role involves generic customer service, administration, sales or operations without specific evidence of an automatable bottleneck.",
+      "research_priority": "must not be presented as a strong prospect without additional evidence"
+    }
+  },
+  "evidence_rules": [
+    "Never infer a responsibility merely from the job title.",
+    "If the listing cannot be opened, mark the details as unverified rather than inventing them.",
+    "Do not automatically classify customer-support jobs as opportunities for AI chatbots.",
+    "Do not use a listing to claim the employer has a problem it has not disclosed."
+  ],
+  "commercial_suitability": {
+    "values": ["high", "medium", "low", "unknown"],
+    "questions": [
+      "Is the employer the actual business that would purchase the service?",
+      "Is the employer an agency that might subcontract implementation?",
+      "Does the advertised work overlap with the engineer's services?",
+      "Is the requirement likely a one-time workflow project or recurring implementation work?",
+      "Is there evidence the business could purchase an external service?",
+      "Would automation complement the employee's work, or be inappropriate?",
+      "Does the employer appear to be seeking an employee exclusively, rather than a contractor or service provider?"
+    ],
+    "unknown_rule": "If commercial suitability is unknown, mark it unknown and investigate rather than assigning an unjustifiably high score.",
+    "do_not_assume": "Do not assume a company advertising a full-time position wants to outsource that work."
+  },
+  "prefer": "Opportunities where a small external project, integration or automation pilot could complement the employer's existing team.",
+  "disqualify": [
+    "Jobs with no identifiable employer and no credible way to investigate the client",
+    "Expired or unverifiable listings",
+    "Roles unrelated to supported services",
+    "Listings where the only connection is that AI could theoretically be used",
+    "Jobs requiring skills or credentials the engineer does not claim",
+    "Recruitment agencies without evidence of a relevant end-client opportunity",
+    "Duplicate advertisements for the same role and employer"
+  ],
+  "scoring": {
+    "dimensions": {
+      "service_fit": {
+        "weight": 0.3,
+        "question": "How closely does the advertised work match the engineer's actual capabilities?"
+      },
+      "evidence_strength": {
+        "weight": 0.3,
+        "question": "How strong is the evidence in the job description itself?"
+      },
+      "employer_verification": {
+        "weight": 0.15,
+        "question": "Can the employer and its current activity be verified independently?"
+      },
+      "commercial_suitability": {
+        "weight": 0.15,
+        "question": "Is this employer a plausible buyer of external implementation work?"
+      },
+      "contactability": {
+        "weight": 0.1,
+        "question": "Is there a usable contact channel and a relevant outreach angle?"
+      }
+    },
+    "gate": "A high score does not mean the employer agreed to buy a service. Commercial suitability unknown is scored low and investigated, not assumed."
+  },
+  "outreach_rules": [
+    "Do not tell the employer its process is inefficient unless the listing explicitly supports that claim.",
+    "Refer to the actual advertised responsibilities and propose a relevant, limited-scope service.",
+    "Personalize the message only when it accurately matches the listing.",
+    "Do not misrepresent the sender as a job applicant when offering services."
+  ],
+  "outreach_example": "The role mentions recurring lead research and CRM updates. I build workflow automations that can help collect, validate and route lead data. Would you be open to discussing whether a small automation pilot could complement your team's current process?",
+  "feedback_outcomes": [
+    "contacted",
+    "replied",
+    "not_interested",
+    "hiring_only",
+    "open_to_contractor",
+    "asked_for_details",
+    "discovery_call_booked",
+    "paid_pilot_agreed",
+    "won",
+    "lost"
+  ],
+  "required_output_fields": [
+    "lead_id",
+    "business_name",
+    "job_title",
+    "job_listing_url",
+    "employer_website",
+    "city",
+    "country",
+    "remote_status",
+    "posted_at",
+    "job_evidence_summary",
+    "advertised_responsibilities",
+    "automation_opportunity",
+    "evidence_level",
+    "relevant_service",
+    "why_service_fits",
+    "portfolio_proof",
+    "commercial_suitability",
+    "employer_verification_status",
+    "contact_channel",
+    "score_service_fit",
+    "score_evidence_strength",
+    "score_employer_verification",
+    "score_commercial_suitability",
+    "score_contactability",
+    "score_weighted_total",
+    "classification",
+    "missing_information",
+    "next_research_step",
+    "outreach_angle"
+  ],
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified employer and no unqualified ones. Optimise for qualified conversations and paid projects, not the number of listings collected."
+  }
+}

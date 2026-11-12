@@ -1,0 +1,226 @@
+{
+  "id": "competitors",
+  "stage": 9,
+  "title": "Competitor, agency and technology signals",
+  "enabled": true,
+  "kind": "market_signal",
+  "brain": "config/brain.json",
+  "note": "Do not interpret a competitor's service offering, a company's technology stack, or an apparent technical gap as proof that the business wants to hire you.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social", "websites", "directories", "referrals", "freelance", "startups"],
+  "objective": "Identify businesses with a plausible need for AI implementation, workflow automation, integrations or technical delivery by analyzing public service offerings, technology requirements, partner announcements and operational expansion signals.",
+  "platform_values": ["Competitor Signal", "Agency Partner"],
+  "sources": [
+    "Agency service pages and implementation portfolios",
+    "Public partner and subcontractor announcements",
+    "Public technology and integration documentation",
+    "Business case studies and project descriptions",
+    "Public hiring announcements",
+    "Public requests for implementation assistance",
+    "Public product and integration roadmaps",
+    "Public technology migration or modernization announcements",
+    "Competitor service pages and positioning",
+    "Publicly documented customer workflows"
+  ],
+  "access_rules": [
+    "Verify material claims against the original source.",
+    "Do not infer private technology stacks, internal processes, customer relationships or technical deficiencies from superficial observations."
+  ],
+  "opportunity_types": {
+    "A": {
+      "name": "Agency implementation partnerships",
+      "complementary_services": [
+        "Digital marketing and lead generation",
+        "Website and e-commerce development",
+        "CRM implementation",
+        "Business process consulting",
+        "Software integration",
+        "Customer support systems"
+      ],
+      "potential_opportunity": "Provide specialized automation implementation or overflow delivery.",
+      "evidence_requirement": "A documented complementary service establishes potential fit; an explicit request for contractors or partners provides stronger commercial evidence."
+    },
+    "B": {
+      "name": "Technology integration opportunities",
+      "capabilities": [
+        "APIs and webhooks",
+        "n8n and Make",
+        "Python automation",
+        "CRM and lead workflows",
+        "WhatsApp and messaging automation",
+        "AI-assisted email and support workflows",
+        "RAG and knowledge-base assistants",
+        "AI agents and MCP integrations"
+      ],
+      "evidence_requirement": "Do not claim that systems are disconnected or that integration is missing unless reliable evidence supports the claim."
+    },
+    "C": {
+      "name": "Competitor and service-gap research",
+      "questions": [
+        "Which services are already offered?",
+        "Which customer segments are served?",
+        "Do their public offerings complement these services?",
+        "Do they publicly seek implementation partners?",
+        "Does a specific, documented request create an opportunity?"
+      ],
+      "rule": "Do not assume a competitor is a prospect simply because it offers similar services. Competing providers may be unsuitable unless there is a credible partnership or subcontracting rationale."
+    },
+    "D": {
+      "name": "Business expansion signals",
+      "examples": [
+        "New service launches",
+        "New customer-support channels",
+        "New product launches",
+        "New locations or business units",
+        "Published integration requirements",
+        "Publicly stated process modernization projects"
+      ],
+      "caveat": "An expansion signal is context, not proof of budget, urgency or purchasing intent."
+    }
+  },
+  "evidence_tiers": {
+    "A": {
+      "name": "Direct commercial signal",
+      "examples": [
+        "Explicit request for an implementation partner",
+        "Public request for a supported integration",
+        "Agency seeking subcontracting or white-label capacity",
+        "Defined project requiring a deliverable service"
+      ]
+    },
+    "B": {
+      "name": "Specific technical or operational signal",
+      "examples": [
+        "A public document describes a relevant integration requirement",
+        "A business explains a specific workflow that aligns with these services",
+        "A public project description identifies a relevant implementation task"
+      ]
+    },
+    "C": {
+      "name": "Strategic fit",
+      "examples": [
+        "An agency offers complementary services",
+        "A company has a relevant product or business model",
+        "A public technology announcement suggests a possible future opportunity"
+      ]
+    },
+    "D": {
+      "name": "Unsupported speculation",
+      "examples": [
+        "An assumed technical deficiency",
+        "A guessed technology stack",
+        "An unverified claim that a competitor's customer is dissatisfied",
+        "A claim that a company needs AI simply because it does not advertise AI services"
+      ],
+      "caveat": "Tier D must not be treated as a qualified opportunity."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "D": "not saved"
+  },
+  "research_workflow": [
+    "Identify the business and official website.",
+    "Record the original discovery source.",
+    "Inspect relevant service, technology, partnership or project pages.",
+    "Record the exact public evidence supporting the opportunity.",
+    "Determine whether the signal indicates a direct requirement, potential fit or general context.",
+    "Match the opportunity to an actual service.",
+    "Determine whether the business is a direct client, potential agency partner or unsuitable competitor.",
+    "Identify a relevant decision-maker or business contact.",
+    "Match the opportunity to a relevant portfolio example.",
+    "Check all existing ClientOutreach records.",
+    "Score the lead and recommend the next action."
+  ],
+  "never_invent": [
+    "a technology stack",
+    "an integration gap",
+    "a customer complaint",
+    "a partnership requirement",
+    "a budget"
+  ],
+  "portfolio_matching": {
+    "rule": "Do not use a portfolio example simply because it contains the word AI. Explain the specific connection between the example and the opportunity.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "signal_strength": {
+        "weight": 0.3,
+        "question": "How strong is the commercial or technical signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the opportunity match a deliverable service?"
+      },
+      "business_verification": {
+        "weight": 0.15,
+        "question": "Is the business verified?"
+      },
+      "partnership_or_project_suitability": {
+        "weight": 0.15,
+        "question": "Is a partnership or project plausible?"
+      },
+      "contactability": {
+        "weight": 0.15,
+        "question": "Is there a route to the right person and a specific outreach reason?"
+      }
+    },
+    "gate": "A technology or competitor signal without evidence of a relevant requirement must not receive a high commercial-signal score. High scores indicate research priority, not purchase intent."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "business_name_and_official_url",
+    "business_category",
+    "discovery_source_and_original_urls",
+    "observed_service_technology_or_partnership_signal",
+    "evidence_classification",
+    "opportunity_type",
+    "specific_observed_facts",
+    "opportunity_hypothesis",
+    "confirmed_requirement_or_buying_intent",
+    "recommended_service",
+    "portfolio_project_and_url",
+    "business_and_decision_maker_verification",
+    "public_contact_channel",
+    "commercial_suitability",
+    "evidence_gaps",
+    "dimension_scores_and_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "existing_lead_id",
+    "lead_status"
+  ],
+  "missing_value_rule": "Use unknown or null for missing information.",
+  "outreach_strategy": {
+    "agency_partner": "Explain how implementation skills could complement their services.",
+    "direct_business": "Reference the specific documented requirement or operational signal.",
+    "strategic_fit_only": "Recommend low-pressure relationship building or further research rather than asserting a problem.",
+    "must_not": [
+      "Claim a business has a technology gap without evidence",
+      "Suggest a competitor's customers are dissatisfied without evidence",
+      "Pretend to have access to private systems",
+      "Promise results unsupported by the portfolio",
+      "Send generic competitor-based pitches to every agency"
+    ]
+  },
+  "dedupe": {
+    "rule": "Merge records for the same business while preserving each independent evidence source."
+  },
+  "feedback_outcomes": [
+    "partnership_inquiry_sent",
+    "technical_requirement_confirmed",
+    "referral_received",
+    "discovery_call_booked",
+    "paid_pilot_proposed",
+    "won",
+    "lost",
+    "not_interested"
+  ],
+  "operating_principle": "Use competitor and technology research to discover a reason to investigate or contact a business, not to manufacture a reason the business needs these services.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified opportunity and no speculative ones."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "portfolio_urls": [
+    "https://imawais.engineer",
+    "https://imawais.engineer/services",
+    "https://imawais.engineer/projects"
+  ],
+  "recency_days": 7,
+  "target_services": [
+    "chatbot",
+    "ai agent",
+    "virtual assistant automation",
+    "social media manager automation",
+    "meta business suite manager",
+    "n8n workflow",
+    "CRM lead engine"
+  ],
+  "sources": {
+    "active": [
+      "google_maps",
+      "job_boards",
+      "social",
+      "websites",
+      "directories",
+      "referrals",
+      "freelance",
+      "startups",
+      "competitors"
+    ],
+    "inactive": [],
+    "non_discovery": ["followups"],
+    "non_discovery_note": "followups discovers nothing: it reviews leads the other nine produced and recommends a next action, including no contact.",
+    "stage_order": [
+      "google_maps",
+      "job_boards",
+      "social",
+      "websites",
+      "directories",
+      "referrals",
+      "freelance",
+      "startups",
+      "competitors",
+      "followups"
+    ],
+    "specs": [
+      "config/sources/01-google-maps.json",
+      "config/sources/02-job-boards.json",
+      "config/sources/03-social.json",
+      "config/sources/04-websites.json",
+      "config/sources/05-directories.json",
+      "config/sources/06-referrals.json",
+      "config/sources/07-freelance.json",
+      "config/sources/08-startups.json",
+      "config/sources/09-competitors.json",
+      "config/sources/10-followups.json"
+    ],
+    "run_one_source_family_per_pass": true,
+    "rule": "Only sources listed in active are discovered, and each pass uses one source family. All three write into the same table but never share a search pass; one business stays one lead across sources."
+  },
+  "brain": {
+    "spec": "config/brain.json"
+  },
+  "batch": {
+    "max_leads_per_run": null,
+    "min_classification": "potential",
+    "order": "weighted_score_desc",
+    "rule": "No numeric cap. A run returns every lead that carries a specific citable signal and clears its source's 60 band, and nothing else."
+  }
+}

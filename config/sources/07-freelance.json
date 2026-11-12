@@ -1,0 +1,162 @@
+{
+  "id": "freelance",
+  "stage": 7,
+  "title": "Freelance platforms and project requests",
+  "enabled": true,
+  "kind": "project_listing",
+  "brain": "config/brain.json",
+  "note": "Do not apply to every listing containing the words AI, automation, Python or developer. A large number of available jobs does not justify irrelevant applications.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social", "websites", "directories", "referrals"],
+  "objective": "Find specific, actionable projects that match actual skills, including freelance marketplaces and publicly accessible project-request platforms.",
+  "platform_values": ["Freelance Platform"],
+  "sources": [
+    "Freelance marketplaces",
+    "Public project boards",
+    "Contract and implementation request listings",
+    "Public requests for proposals",
+    "Agency subcontracting requests",
+    "Relevant developer and automation communities",
+    "Client-posted technical project briefs"
+  ],
+  "access_rules": [
+    "Respect platform rules.",
+    "Do not bypass access controls or automate prohibited applications, messages or scraping."
+  ],
+  "capability_boundaries": [
+    "n8n and Make automation",
+    "Python scripts and integrations",
+    "APIs, webhooks and data transformation",
+    "AI agents and MCP servers",
+    "WhatsApp and messaging workflows",
+    "Email classification and customer support automation",
+    "Lead qualification and CRM integrations",
+    "RAG and knowledge-base assistants",
+    "Relevant web development"
+  ],
+  "skill_fit": {
+    "strong": "Core requirements closely match demonstrated capabilities.",
+    "partial": "Most requirements are feasible, but some require clarification or additional learning.",
+    "poor": "Essential requirements exceed actual skills or available resources.",
+    "rule": "Reject poor-fit projects instead of exaggerating expertise."
+  },
+  "project_qualification": [
+    "Exact project requirements",
+    "Required technologies and integrations",
+    "Expected deliverables",
+    "Budget and payment structure, if disclosed",
+    "Deadline and estimated scope",
+    "Client identity and history, if verifiable",
+    "Whether the client is hiring an employee or purchasing a service",
+    "Whether the project is still open",
+    "Competition and proposal costs, if visible",
+    "Whether the opportunity is commercially worthwhile"
+  ],
+  "qualification_rules": [
+    "Do not infer that a job is available merely because it appears in search results.",
+    "Do not treat a generic job title as proof of a relevant automation project."
+  ],
+  "commercial_intent": {
+    "explicit_project_request": "The client describes a relevant deliverable.",
+    "relevant_hiring_signal": "The client seeks someone with related capabilities.",
+    "weak_signal": "The listing mentions a broad technical role without a clear matching task.",
+    "unqualified": "The listing is irrelevant, expired, unverifiable or outside actual capabilities.",
+    "caveat": "A project request indicates potential demand, not guaranteed willingness to hire."
+  },
+  "tier_mapping": {
+    "explicit_project_request": "direct",
+    "relevant_hiring_signal": "plausible",
+    "weak_signal": "weak",
+    "unqualified": "not saved"
+  },
+  "hard_exclusions": [
+    "Listings requiring unclaimed certifications",
+    "Essential technologies that cannot be delivered",
+    "Unpaid speculative production work",
+    "Suspicious payment arrangements",
+    "Demonstrably fraudulent listings",
+    "Closed projects"
+  ],
+  "portfolio_matching": {
+    "rule": "Select the closest relevant example and do not claim a project satisfies requirements it does not demonstrate.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "requirements_match": {
+        "weight": 0.3,
+        "question": "How closely do the requirements match demonstrated skills?"
+      },
+      "request_clarity": {
+        "weight": 0.25,
+        "question": "How clear and strong is the project request?"
+      },
+      "client_legitimacy": {
+        "weight": 0.15,
+        "question": "Is the client verified and legitimate?"
+      },
+      "commercial_attractiveness": {
+        "weight": 0.15,
+        "question": "Are the commercial terms worthwhile?"
+      },
+      "application_feasibility": {
+        "weight": 0.15,
+        "question": "Is applying feasible and is the portfolio relevant?"
+      }
+    },
+    "gate": "Use the score to prioritize research, not as a probability of winning. Apply a hard exclusion when an essential requirement is outside actual capabilities, the listing is fraudulent, or the project is closed."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "platform_and_listing_url",
+    "client_or_company_name",
+    "project_title",
+    "listing_status_and_date",
+    "exact_deliverables",
+    "required_technologies",
+    "skill_fit",
+    "relevant_service",
+    "portfolio_example",
+    "budget_and_deadline_if_stated",
+    "client_verification_and_risk_notes",
+    "application_cost_if_relevant_and_visible",
+    "evidence_gaps",
+    "dimension_scores_and_weighted_total",
+    "recommendation",
+    "specific_reason_for_the_recommendation",
+    "proposed_project_approach",
+    "lead_status"
+  ],
+  "missing_value_rule": "Do not fabricate budgets, client histories, project requirements or contact details.",
+  "proposal_strategy": [
+    "Address the client's actual requirements.",
+    "Describe a feasible implementation approach.",
+    "Reference one relevant portfolio project.",
+    "Ask a focused clarification question when necessary.",
+    "Avoid generic claims and unsupported guarantees.",
+    "Propose a small, defined first milestone when appropriate."
+  ],
+  "proposal_prohibitions": [
+    "Do not pretend to be a client.",
+    "Do not evade platform fees.",
+    "Do not move transactions off-platform where prohibited."
+  ],
+  "feedback": {
+    "track": [
+      "proposals_sent",
+      "proposal_cost",
+      "replies",
+      "interviews",
+      "paid_tests",
+      "contracts",
+      "revenue",
+      "losses"
+    ],
+    "compare_by": ["project_type", "client_segment", "proposal_quality", "application_cost"],
+    "rule": "If a category consistently consumes proposal credits without responses, lower its priority and investigate the cause before spending more."
+  },
+  "operating_principle": "Pursue projects where the requirements, demonstrated skills, commercial terms and client legitimacy align.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified project and skip the rest."
+  }
+}

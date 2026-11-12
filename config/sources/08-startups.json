@@ -1,0 +1,192 @@
+{
+  "id": "startups",
+  "stage": 8,
+  "title": "Startup ecosystems and founder networks",
+  "enabled": true,
+  "kind": "startup_signal",
+  "brain": "config/brain.json",
+  "note": "A startup being new, funded or AI-focused does not automatically mean it needs these services.",
+  "do_not_mix_with": ["google_maps", "job_boards", "social", "websites", "directories", "referrals", "freelance"],
+  "objective": "Discover startups and founders who may need practical AI implementation, workflow automation, integrations or technical delivery support.",
+  "platform_values": ["Startup Network"],
+  "sources": [
+    "Startup directories",
+    "Accelerator and incubator directories",
+    "Public founder profiles and posts",
+    "Startup launch announcements",
+    "Public demo-day and pitch-event participant lists",
+    "Publicly accessible startup communities",
+    "Company product and integration pages",
+    "Founder requests for technical collaborators",
+    "Public hiring and contractor requests",
+    "Startup project briefs and partnership announcements"
+  ],
+  "access_rules": [
+    "Use public and permitted information only.",
+    "Verify each opportunity through its original source whenever possible."
+  ],
+  "target_profiles": [
+    "SaaS businesses integrating AI into workflows",
+    "Early-stage products requiring an MVP or integration prototype",
+    "Startups handling customer inquiries or lead intake",
+    "Businesses with document-heavy workflows",
+    "Companies seeking CRM, messaging or operational integrations",
+    "AI products needing RAG or knowledge retrieval",
+    "Startups looking for automation implementation partners",
+    "Agencies and startups seeking flexible technical delivery capacity"
+  ],
+  "target_profile_rule": "These are discovery categories, not proof of need.",
+  "signals": {
+    "A": {
+      "name": "Explicit requirement",
+      "examples": [
+        "A founder asks for an automation developer",
+        "A startup publishes a relevant contractor or implementation request",
+        "A company describes a specific integration project",
+        "A founder requests help implementing an AI assistant or workflow",
+        "A startup seeks a technical partner for a clearly defined deliverable"
+      ]
+    },
+    "B": {
+      "name": "Specific product or workflow evidence",
+      "examples": [
+        "A product publicly documents a particular integration gap",
+        "A company describes a recurring process that matches a supported service",
+        "A startup publicly explains a technical implementation challenge",
+        "A founder discusses a project and invites relevant technical assistance"
+      ]
+    },
+    "C": {
+      "name": "General startup activity",
+      "examples": [
+        "The company announces funding",
+        "A founder launches a product",
+        "A startup participates in an accelerator",
+        "A company describes itself as AI-powered",
+        "A startup is expanding its team without a relevant technical requirement"
+      ],
+      "caveat": "May justify monitoring or further research, but not claims of buying intent."
+    }
+  },
+  "tier_mapping": {
+    "A": "direct",
+    "B": "plausible",
+    "C": "weak",
+    "note": "Tier C alone is not admitted as a qualified lead."
+  },
+  "research_workflow": [
+    "Verify the company's name, official domain and product.",
+    "Record the source of discovery.",
+    "Review the public product description and relevant documentation.",
+    "Identify a specific requirement or workflow opportunity.",
+    "Record the supporting source URL.",
+    "Separate observable evidence from hypotheses.",
+    "Identify the founder or relevant technical/operations decision-maker, if verified.",
+    "Determine whether the startup is seeking a contractor, employee, co-founder or partner.",
+    "Match the requirement to one supported service.",
+    "Select a relevant portfolio example.",
+    "Assess project scope and commercial suitability.",
+    "Deduplicate against existing ClientOutreach records."
+  ],
+  "assumption_rule": "Do not assume a startup wants a freelancer simply because it has a technical roadmap.",
+  "commercial_qualification": {
+    "questions": [
+      "Is there a defined deliverable?",
+      "Is the startup actively seeking implementation help?",
+      "Is external contracting plausible?",
+      "Is the required work within actual capabilities?",
+      "Is the scope suitable for a small pilot or project?",
+      "Is there a legitimate contact channel?",
+      "Are payment or funding assumptions supported by evidence?"
+    ],
+    "funding_rule": "Funding announcements do not establish an available budget. Do not invent funding amounts, runway, purchasing authority or urgency.",
+    "employment_rule": "Distinguish employee vacancies from contractor opportunities. If the startup is recruiting only a full-time employee, do not misrepresent a service offer as a job application."
+  },
+  "engagement_types": ["contractor", "fixed_project", "partnership", "employee_only"],
+  "portfolio_matching": {
+    "rule": "Use only relevant examples and do not claim unverified production metrics or commercial outcomes.",
+    "examples_ref": "brain.portfolio_examples"
+  },
+  "scoring": {
+    "dimensions": {
+      "implementation_signal": {
+        "weight": 0.3,
+        "question": "How strong is the implementation signal?"
+      },
+      "service_fit": {
+        "weight": 0.25,
+        "question": "Does the requirement match a deliverable service?"
+      },
+      "company_verification": {
+        "weight": 0.15,
+        "question": "Is the company verified?"
+      },
+      "contractor_suitability": {
+        "weight": 0.15,
+        "question": "Is a contractor or project engagement plausible?"
+      },
+      "decision_maker_contactability": {
+        "weight": 0.15,
+        "question": "Is there a route to a verified decision-maker and a specific outreach reason?"
+      }
+    },
+    "gate": "A high score means the lead deserves further investigation, not that it has buying intent. Do not assign a high implementation-signal score solely because a startup is AI-focused, recently launched or funded."
+  },
+  "required_output_fields": [
+    "lead_id",
+    "startup_name_and_official_url",
+    "product_and_industry",
+    "location",
+    "discovery_source_and_original_source_urls",
+    "founder_or_relevant_decision_maker",
+    "role_verification_evidence",
+    "observed_requirement_or_signal",
+    "evidence_tier",
+    "opportunity_hypothesis",
+    "confirmed_requirement_or_buying_intent",
+    "recommended_service",
+    "portfolio_project_and_url",
+    "engagement_type",
+    "commercial_suitability",
+    "scope_or_capability_gaps",
+    "contact_channel",
+    "dimension_scores_and_weighted_total",
+    "recommended_next_action",
+    "outreach_angle",
+    "existing_lead_id",
+    "lead_status"
+  ],
+  "missing_value_rule": "Use unknown or null when information is unavailable.",
+  "outreach_strategy": {
+    "must": [
+      "Reference a specific product, requirement or founder statement",
+      "Offer one relevant implementation service or a narrowly scoped pilot",
+      "Explain why demonstrated capabilities match the stated requirement"
+    ],
+    "must_not": [
+      "Pitch every startup an AI chatbot",
+      "Assume a funding announcement means a startup can afford the service",
+      "Claim to have evaluated private infrastructure",
+      "Pretend to be an investor, accelerator representative or job applicant",
+      "Promise product-market fit, revenue growth or unverified performance improvements"
+    ],
+    "no_trigger_rule": "If there is no credible trigger, retain the startup as a low-priority prospect or exclude it."
+  },
+  "feedback_outcomes": [
+    "founder_contacted",
+    "reply_received",
+    "referred_to_technical_lead",
+    "asked_for_portfolio_or_proposal",
+    "discovery_call_booked",
+    "scope_requested",
+    "paid_pilot_proposed",
+    "won",
+    "lost",
+    "not_interested"
+  ],
+  "operating_principle": "Prioritize startups with verifiable requirements and a plausible path to a paid technical engagement, not startups merely because they are new, funded or interested in AI.",
+  "quantity_policy": {
+    "max_leads_per_run": null,
+    "rule": "No numeric limit. Return every qualified startup and no unqualified ones."
+  }
+}

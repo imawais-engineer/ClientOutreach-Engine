@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "role": "Independent Forward Deployed AI Engineer finding potential clients for AI automation, workflow integration and AI agent implementation",
+  "objective": "Identify relevant businesses, investigate evidence of potential needs, and prioritize businesses worth contacting.",
+  "success_metric": "Qualified conversations and paid implementation opportunities, not the number of discovered leads.",
+  "not_the_goal": [
+    "maximizing lead count",
+    "generating a generic offer for every business in a search result",
+    "treating a category match as proof of demand"
+  ],
+  "capabilities": [
+    {
+      "id": "workflow_automation",
+      "service": "n8n and Make workflow automation"
+    },
+    {
+      "id": "python_scripting",
+      "service": "Python scripting and data processing"
+    },
+    {
+      "id": "api_integration",
+      "service": "API and webhook integrations"
+    },
+    {
+      "id": "agent_mcp",
+      "service": "AI agent and MCP server development"
+    },
+    {
+      "id": "lead_ops",
+      "service": "Lead capture, qualification, routing and CRM integration"
+    },
+    {
+      "id": "support_ai",
+      "service": "AI-assisted customer support and knowledge-base assistants"
+    },
+    {
+      "id": "messaging",
+      "service": "WhatsApp and messaging workflow integrations"
+    },
+    {
+      "id": "data_extraction",
+      "service": "Document and business data extraction"
+    },
+    {
+      "id": "reporting",
+      "service": "Automated reporting and notifications"
+    },
+    {
+      "id": "rag",
+      "service": "RAG and retrieval-based knowledge systems"
+    },
+    {
+      "id": "white_label",
+      "service": "White-label automation implementation for agencies"
+    },
+    {
+      "id": "website_landing_pages",
+      "service": "Website and landing-page builds",
+      "caveat": "Only when the business has an identifiable website-related need and the project fits actual development capabilities."
+    }
+  ],
+  "capability_rule": "Do not assume every capability is equally appropriate for every business. Match only services supported by the engineer's actual capabilities and portfolio.",
+  "claim_rule": "Do not claim expertise, certifications, integrations or production results that have not been verified.",
+  "portfolio_rule": {
+    "use_only_supporting_evidence": true,
+    "evidence_source": "profile.json projects and proof_points",
+    "never_invent": [
+      "clients",
+      "results",
+      "metrics",
+      "production deployments",
+      "source URLs"
+    ],
+    "if_no_matching_proof": "Omit portfolio proof rather than stretching it."
+  },
+  "portfolio_examples": {
+    "selection_rule": "Use the project that matches the identified requirement, never the same example for every lead. If none is relevant, state that no close portfolio match was found. A link shows implementation experience, not measured business results.",
+    "examples": [
+      {
+        "service": "WhatsApp AI assistant with Google Docs knowledge base",
+        "url": "https://www.imawais.engineer/projects/whatsapp-ai-assistant-google-docs"
+      },
+      {
+        "service": "AI email labeling agent for Gmail",
+        "url": "https://imawais.engineer/projects/ai-email-labeling-agent-gmail"
+      },
+      {
+        "service": "AI lead qualification for real estate",
+        "url": "https://www.imawais.engineer/projects/ai-lead-qualification-real-estate"
+      },
+      {
+        "service": "YouTube publishing automation",
+        "url": "https://imawais.engineer/projects/youtube-publishing-automation"
+      },
+      {
+        "service": "Instagram Reel recreation with Gemini and MiniMax",
+        "url": "https://www.imawais.engineer/projects/instagram-reel-recreation-gemini-minimax"
+      },
+      {
+        "service": "LinkedIn job-search automation with OpenAI and Telegram",
+        "url": "https://imawais.engineer/projects/linkedin-job-search-automation-openai-telegram/"
+      },
+      {
+        "service": "Multi-query RAG with Supabase and OpenAI",
+        "url": "https://imawais.engineer/projects/multi-query-rag-supabase-openai"
+      }
+    ]
+  },
+  "prospecting": {
+    "primary_strategy": "Agency partnerships: agencies that may need an external automation implementation partner.",
+    "partnership_signals": [
+      "Offers CRM implementation, lead generation, sales funnels or marketing operations",
+      "Manages recurring campaigns or ongoing client accounts",
+      "Offers web development, e-commerce implementation or integrations",
+      "Advertises workflow automation, business process improvement or AI services",
+      "Delivers repeatable services that could benefit from reusable automation workflows",
+      "Has a visible team, an active website, a working contact channel and evidence of current activity"
+    ],
+    "signal_rule": "Signals establish potential fit, not confirmed demand. Never conclude an agency needs help merely because it is a digital marketing agency.",
+    "never_claim_without_evidence": [
+      "missed leads",
+      "slow response times",
+      "manual reporting",
+      "disconnected CRMs",
+      "other operational problems"
+    ]
+  },
+  "evidence_model": {
+    "levels": {
+      "observed_evidence": "A fact supported by an accessible source.",
+      "potential_opportunity": "A reasonable hypothesis about where automation could help.",
+      "confirmed_pain": "A problem explicitly confirmed by the business or supported by reliable direct evidence."
+    },
+    "example": {
+      "observed_evidence": "The agency advertises lead-generation services and CRM implementation on its official website.",
+      "potential_opportunity": "It may benefit from a reusable lead-enrichment and routing workflow or an external automation delivery partner.",
+      "confirmed_pain": "Not established. Ask whether its team builds these workflows internally or outsources implementation."
+    },
+    "rules": [
+      "Never present a potential opportunity as confirmed pain.",
+      "Unknown information stays unknown; do not fill gaps with assumptions.",
+      "Every claim carries the evidence source URL and a short factual summary."
+    ]
+  },
+  "evidence_scale": {
+    "shared_column": "evidence_level",
+    "values": ["direct", "plausible", "weak"],
+    "mapping": {
+      "social": { "A": "direct", "B": "plausible", "C": "weak" },
+      "job_boards": { "1": "direct", "2": "plausible", "3": "weak" },
+      "websites": { "A": "direct", "B": "plausible", "C": "weak" },
+      "directories": { "A": "direct", "B": "plausible", "C": "weak", "D": "not saved" },
+      "referrals": { "A": "direct", "B": "plausible", "C": "weak" },
+      "freelance": {
+        "explicit_project_request": "direct",
+        "relevant_hiring_signal": "plausible",
+        "weak_signal": "weak",
+        "unqualified": "not saved"
+      },
+      "startups": { "A": "direct", "B": "plausible", "C": "weak" }
+    },
+    "rule": "Each source's raw label is preserved in details.evidence_tier. A directory Level D lead is never saved."
+  },
+  "scoring": { "dimension_scale": [
+   0,
+   5
+ ],
+ "dimensions_defined_in": "source spec",
+ "dimensions_per_source": "5 or 6, per source spec",
+ "note": "Each source scores its own named dimensions and weights them; this file holds only the shared maths and thresholds. Source 01 uses the v2 model: service_fit 0.25, need_evidence 0.25, buying_intent 0.20, verification 0.15, contactability 0.10, geographic_relevance 0.05. The six dimensions are always reported separately as well as summed, so a blended total can never conceal a missing dimension.",
+ "separate_dimensions_rule": [
+ "Business legitimacy, service fit, evidence strength, buying intent, contactability and geographic relevance are distinct and are never collapsed into a single opaque number.",
+ "Buying intent scores zero unless evidence supports it.",
+ "A high service-fit score never compensates for the complete absence of a relevant opportunity signal.",
+ "A missing location or missing contact never raises a score."
+ ],
+    "weight_patterns": {
+      "evidence_first_30_25_15_15_15": ["social", "websites", "directories", "referrals", "freelance", "startups"],
+      "balanced_30_30_15_15_10": ["google_maps", "job_boards"]
+    },
+    "weighted_total": "round(sum(score_dimension / 5 * weight * 100))",
+    "score_explanation_required": true,
+    "unknown_rule": "An unknown value must not receive a high score merely because information is missing.",
+    "high_fit_is_not_demand": true,
+ "classification": {
+   "priority_prospect": {
+     "min": 60,
+     "max": 100,
+     "meaning": "Evidence-backed fit. Investigate for personalized outreach only after the evidence gate passes."
+   },
+   "potential_prospect": {
+     "min": 40,
+     "max": 59,
+     "meaning": "Gather more evidence before outreach."
+   },
+   "deprioritize": {
+     "min": 0,
+     "max": 39,
+     "meaning": "Deprioritize or reject."
+   }
+ },
+ "bands_note": "Bands were lowered from 80/60 to 60/40 when the model gained a 20-point buying-intent axis that earns nothing without an explicit demand signal. A strong, well-verified, no-intent prospect now lands around 60-70 instead of 85-95, which is what the evidence actually supports.",
+ "gate": "A lead with no specific supporting opportunity evidence cannot be classified as a confirmed high-intent prospect, regardless of its total score.",
+ "hard_gates": [
+ "No verified business identity -> do not qualify.",
+ "No traceable, relevant evidence -> do not qualify.",
+ "No defensible service match -> do not qualify.",
+ "Hypothesis-only opportunity -> research queue only; never a confirmed need and never outreach-ready.",
+ "Known opt-out or do-not-contact restriction -> never prepare for outreach."
+ ]
+  },
+  "record": {
+    "id": "uuid",
+    "identity": "one lead per business, keyed by business_key (normalised name)",
+    "business_key_rule": "Lowercase, strip punctuation and legal suffixes, then match branch/location variants.",
+    "evidence_list": "A lead carries an evidence list. Each entry records the source (google_maps, job_boards, social), its source URL, the observed evidence, the date if known, and its tier or level.",
+    "new_signal_rule": "A signal from a business that already exists updates that lead's evidence list. It never creates a duplicate lead, even from a different source.",
+    "primary_url": "The strongest or most recent evidence URL is kept as the lead's primary URL for the card.",
+    "source_urls_preserved": true,
+    "contacts_rule": "Individual contacts live in details.contacts[] and stay distinct from the business entity. The primary contact is mirrored into contact_name, contact_role, contact_role_evidence and contact_verification_status.",
+    "unknown_values": "null, never an invented placeholder"
+  },
+  "qualification_layer": {
+    "purpose": "One gate every source passes through. Sources decide what evidence they can see; this layer decides what becomes a lead.",
+    "order": [
+      {
+        "step": 1,
+        "name": "identity",
+        "rule": "Verify the business name and, where one exists, the official domain."
+      },
+      {
+        "step": 2,
+        "name": "dedupe",
+        "rule": "Match on business_key and verified domain against existing records. On a match, merge: preserve every source URL, keep each source's evidence separate, and never insert a second row for the same business."
+      },
+      {
+        "step": 3,
+        "name": "evidence",
+        "rule": "Require at least one specific, citable signal with its source URL. Contextual-only evidence (tier C, level 3, signal C, directory level D) is not admitted."
+      },
+      {
+        "step": 4,
+        "name": "separation",
+        "rule": "Store observed evidence, opportunity hypothesis, and confirmed requirement or buying intent as separate fields. A hypothesis never becomes a confirmed state without a cited statement."
+      },
+      {
+        "step": 5,
+        "name": "capability",
+        "rule": "Reject a lead whose essential requirement is outside the capability list, however good the commercial signal."
+      },
+      {
+        "step": 6,
+        "name": "scoring",
+        "rule": "Score the source's five dimensions, compute the weighted total, and assign the classification band."
+      },
+      {
+        "step": 7,
+        "name": "commercial",
+        "rule": "Record the plausible engagement type and contact route. Unknown stays unknown."
+      },
+      {
+        "step": 8,
+        "name": "admission",
+        "rule": "Admit at potential or better. Below that, drop the record or keep it as an unverified candidate with the exact next research step."
+      }
+    ],
+    "merge_conflicts": "When two sources disagree, keep both values in details.evidence and let the more specific, higher-scored source fill the flat column.",
+    "never": [
+      "insert the same business twice",
+      "overwrite one source's evidence URL with another's",
+      "let a later source downgrade a verified requirement into a hypothesis"
+    ]
+  },
+  "lifecycle": {
+    "states": [
+      "discovered",
+      "researching",
+      "qualified",
+      "ready_for_outreach",
+      "contacted",
+      "replied",
+      "discovery_discussion",
+      "proposal_or_pilot",
+      "won",
+      "lost",
+      "nurture",
+      "disqualified",
+      "do_not_contact"
+    ],
+    "semantics": {
+      "applied": "A real application submitted to a project or role, never a sales message.",
+      "hidden": "A view flag that hides a lead from the default list; not a lifecycle state.",
+      "do_not_contact": "Suppresses all future outreach regardless of score."
+    },
+    "transition_rule": "Never move a lead to contacted or won without corresponding evidence."
+  },
+  "evidence_record": {
+    "fields": [
+      "source_type",
+      "url",
+      "observed_at",
+      "summary",
+      "classification",
+      "verification_status"
+    ],
+    "rule": "Never invent a source URL or claim a page was reviewed if it was inaccessible."
+  },
+  "four_concepts": {
+    "business_fit": "Does the business resemble a plausible target customer or partner?",
+    "evidence_of_need": "Is there an observable signal supporting a relevant opportunity?",
+    "buying_intent": "Has the business expressed interest in obtaining a service?",
+    "engagement": "Has the prospect responded, requested information or agreed to a next step?",
+    "rule": "Keep these four separate. Never collapse them into one unexplained score."
+  },
+  "human_review": {
+    "required_when": [
+      "Evidence conflicts",
+      "The decision-maker is uncertain",
+      "The proposed service exceeds demonstrated capabilities",
+      "The message includes sensitive or potentially misleading claims",
+      "The contact status is ambiguous",
+      "An external action could be irreversible or commercially significant"
+    ],
+    "always": ["respect opt-outs and do-not-contact status"]
+  },
+  "quality_gate": {
+    "conditions": [
+      "The business is sufficiently verified",
+      "At least one source supports the opportunity",
+      "The proposed service matches actual capabilities",
+      "The reason for outreach is documented",
+      "The contact method is appropriate",
+      "The lead is not blocked by opt-out or other contact restrictions"
+    ],
+    "failure_rule": "If any condition fails, keep the lead in research, nurture or disqualified status instead of promoting it to qualified."
+  },
+  "quality": {
+    "quality_over_volume": true,
+    "max_leads_per_run": null,
+    "volume_rule": "No cap on how many leads a run returns. Volume is bounded by evidence quality only, never by a number.",
+    "admission_test": "A lead is saved only when it carries at least one specific, citable signal with its source URL. No signal, no lead.",
+    "min_classification": "potential",
+    "threshold_source": "Source 01 v2 bands: 60-100 priority, 40-59 potential, below 40 deprioritise. The evidence gate (need_evidence >= 10/25, i.e. an observed opportunity signal or better) is what permits a lead to be called qualified; the band only ranks it.",
+    "order": "Strongest verified evidence first. Classification is a priority label, not a quota.",
+    "clarity_rules": [
+      "No filler leads to keep the dashboard busy.",
+      "No lead whose only justification is its industry or category.",
+      "No unknown presented as a fact; unknown stays unknown.",
+      "Every lead names one service and the evidence that supports it.",
+      "Every lead can explain in one sentence why this business and not the next one."
+    ],
+    "irrelevant_lead_rule": "A contextual signal alone is not saved as a qualified lead. It is dropped, or kept only as an unverified candidate with the exact next research step needed to qualify it.",
+    "dedupe_against_existing": true,
+    "personalize_every_angle": true,
+    "no_shared_template_angle": true,
+    "reject_when_only_justification": "\"AI can help every business\""
+  },
+  "exclusions": [
+    "Businesses with no credible connection to the supported services",
+    "Generic directory entries with no usable business evidence",
+    "Duplicate listings or alternate names for the same business",
+    "Inactive businesses when inactivity is reasonably established",
+    "Businesses selected solely because the category is popular",
+    "Leads whose recommended service has no evidence-based connection to their business",
+    "Companies for which the only justification is \"AI can help every business\"",
+    "Employment listings when the active stage is Google Maps discovery"
+  ],
+  "feedback": {
+    "outcomes": [
+      "no_response",
+      "not_interested",
+      "no_current_need",
+      "need_identified",
+      "asked_for_more_information",
+      "meeting_booked",
+      "opportunity_won",
+      "opportunity_lost"
+    ],
+    "preserve_on_contact": true,
+    "rule": "A lack of response is not proof that the business has no need.",
+    "use_to_learn": "Which business categories, evidence signals and outreach angles generate real conversations.",
+    "funnel": [
+      "qualified_leads",
+      "outreach_messages_sent",
+      "replies",
+      "positive_replies",
+      "discovery_calls",
+      "proposals",
+      "paid_pilots",
+      "won_deals",
+      "lost_deals",
+      "opt_outs",
+      "time_and_cost_per_result"
+    ],
+    "funnel_rule": "Optimise for relevant conversations, never for lead or message volume."
+  }
+}
