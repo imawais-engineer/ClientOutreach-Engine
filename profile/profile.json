@@ -1,0 +1,642 @@
+{
+  "owner": "Muhammad Awais",
+  "root": "https://imawais.engineer",
+  "crawled_pages": [
+    "https://imawais.engineer/",
+    "https://imawais.engineer/about",
+    "https://imawais.engineer/contact",
+    "https://imawais.engineer/media-kit",
+    "https://imawais.engineer/projects",
+    "https://imawais.engineer/projects/ai-customer-support-triage",
+    "https://imawais.engineer/projects/ai-email-labeling-agent-gmail",
+    "https://imawais.engineer/projects/ai-lead-meeting-scheduling-zoho-gemini",
+    "https://imawais.engineer/projects/ai-lead-qualification-real-estate",
+    "https://imawais.engineer/projects/ai-review-management-system",
+    "https://imawais.engineer/projects/automated-business-kpi-analysis-growth-insights",
+    "https://imawais.engineer/projects/automated-offer-letter-response-tracking",
+    "https://imawais.engineer/projects/autonomous-cicd-code-reviewer",
+    "https://imawais.engineer/projects/brand-governed-content-critic",
+    "https://imawais.engineer/projects/client-intake-onboarding-automation",
+    "https://imawais.engineer/projects/hierarchical-support-swarm",
+    "https://imawais.engineer/projects/hubspot-lead-routing-gpt4-airtable",
+    "https://imawais.engineer/projects/human-in-the-loop-proposal-swarm",
+    "https://imawais.engineer/projects/instagram-reel-recreation-gemini-minimax",
+    "https://imawais.engineer/projects/instagram-reels-outlier-telegram-n8n",
+    "https://imawais.engineer/projects/lead-reply-sync-gohighlevel-clickup",
+    "https://imawais.engineer/projects/linkedin-job-search-automation-openai-telegram",
+    "https://imawais.engineer/projects/multi-query-rag-supabase-openai",
+    "https://imawais.engineer/projects/privacy-first-sql-mcp-analyst",
+    "https://imawais.engineer/projects/real-estate-lead-generation-browseract-make",
+    "https://imawais.engineer/projects/slack-reporting-pipeline-apify-n8n",
+    "https://imawais.engineer/projects/voice-ai-appointment-booking-elevenlabs-calcom",
+    "https://imawais.engineer/projects/whatsapp-ai-assistant-google-docs",
+    "https://imawais.engineer/projects/youtube-publishing-automation",
+    "https://imawais.engineer/services",
+    "https://imawais.engineer/services/agentic-systems",
+    "https://imawais.engineer/services/full-stack-ai-apps",
+    "https://imawais.engineer/services/hybrid-automation",
+    "https://imawais.engineer/services/lead-qualification-crm-automation",
+    "https://imawais.engineer/services/mcp-engineering",
+    "https://imawais.engineer/services/n8n-workflow-automation"
+  ],
+  "services": [
+    "n8n Workflow Automation",
+    "AI Lead Qualification & CRM Automation",
+    "Agentic Systems & State Graph Architecture",
+    "Model Context Protocol (MCP) Server Engineering",
+    "Full-Stack AI Products & Internal Tools",
+    "Deterministic Automation & Hybrid Orchestration",
+    "Virtual Assistant Automation",
+    "Vibe Coding & Rapid AI Prototyping",
+    "Meta Business Suite Management",
+    "Social Media Management"
+  ],
+  "skills": [
+    "n8n",
+    "Make.com",
+    "Zapier",
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "LangGraph",
+    "FastAPI",
+    "Next.js 15",
+    "React",
+    "Tailwind CSS",
+    "OpenAI GPT-4o",
+    "Claude 3.5 Sonnet",
+    "Google Gemini",
+    "OpenRouter",
+    "Apify",
+    "HubSpot",
+    "GoHighLevel",
+    "Pipedrive",
+    "Airtable",
+    "Notion",
+    "Zoho CRM",
+    "Google Sheets",
+    "Slack",
+    "Telegram",
+    "WhatsApp API",
+    "Gmail API",
+    "Supabase pgvector",
+    "PostgreSQL",
+    "MCP (Model Context Protocol)",
+    "Virtual Assistant (VA)",
+    "Vibe Coding",
+    "Meta Business Suite",
+    "Social Media Management"
+  ],
+  "projects": [
+    {
+      "name": "AI Customer Support Triage with n8n & GPT-4o-mini",
+      "pain": "The support team was drowning in tickets arriving from email and website forms.",
+      "solution": "Multi-channel intake → normalisation → AI intelligence layer → parallel Slack + Sheets + Gmail auto-reply",
+      "stack": [
+        "n8n",
+        "OpenAI GPT-4o-mini",
+        "Gmail API",
+        "Slack API",
+        "Google Sheets",
+        "JavaScript"
+      ],
+      "metric": "20+ hrs/week saved · 90% faster replies",
+      "client_type": "Direct client (SaaS / e-commerce)",
+      "url": "https://imawais.engineer/projects/ai-customer-support-triage"
+    },
+    {
+      "name": "AI-Powered Email Labeling Agent for Inbox Management",
+      "pain": "The client received high volumes of email across sponsorships, collaborations, business inquiries, and general messages.",
+      "solution": "Gmail trigger → n8n → OpenAI classification → conditional routing → Gmail label applied",
+      "stack": [
+        "n8n",
+        "Gmail API",
+        "OpenAI",
+        "JavaScript",
+        "Webhooks"
+      ],
+      "metric": "3+ hrs/day saved",
+      "client_type": "Direct client (small business / agency)",
+      "url": "https://imawais.engineer/projects/ai-email-labeling-agent-gmail"
+    },
+    {
+      "name": "AI Lead Meeting Scheduling with Zoho CRM, Google Calendar & Gemini",
+      "pain": "Booking a meeting took several email round trips and lost momentum while the lead was still warm.",
+      "solution": "Zoho webhook → fetch lead → rep + scheduling rules → timezone detection → calendar conflict check → Zoom link → Gemini invite email → log in Zoho",
+      "stack": [
+        "n8n",
+        "Zoho CRM",
+        "Google Calendar",
+        "Zoom",
+        "Google Gemini",
+        "Gmail"
+      ],
+      "metric": "Zero scheduling back-and-forth",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/ai-lead-meeting-scheduling-zoho-gemini"
+    },
+    {
+      "name": "AI Lead Qualification for Real Estate Inquiries with n8n",
+      "pain": "High volumes of buyer inquiries arrived through web forms with no automated system to qualify or prioritise them.",
+      "solution": "Web form → n8n webhook → AI enrichment & scoring → conditional routing → Gmail alert (qualified) + Airtable (all leads)",
+      "stack": [
+        "n8n",
+        "OpenAI",
+        "Groq",
+        "Gmail",
+        "Airtable",
+        "Webhooks",
+        "JavaScript"
+      ],
+      "metric": "6+ hrs/week saved · 2× conversion",
+      "client_type": "Direct client (real estate business)",
+      "url": "https://imawais.engineer/projects/ai-lead-qualification-real-estate"
+    },
+    {
+      "name": "AI-Powered Review Management System",
+      "pain": "Monitoring new Google Maps reviews consistently was a manual chore.",
+      "solution": "Schedule → Apify scraper → n8n → duplicate detection → AI analysis → Slack alerts → Sheets storage",
+      "stack": [
+        "n8n",
+        "Apify",
+        "OpenRouter",
+        "Slack API",
+        "Google Sheets",
+        "JavaScript"
+      ],
+      "metric": "90% faster review responses",
+      "client_type": "Direct client (small business / agency)",
+      "url": "https://imawais.engineer/projects/ai-review-management-system"
+    },
+    {
+      "name": "Automated Business KPI Analysis & Growth Insights",
+      "pain": "Metrics lived in several source systems, so every report started with export and copy-paste.",
+      "solution": "Schedule → collect metrics → normalise into one sheet → period comparison → AI narrative → deliver report",
+      "stack": [
+        "n8n",
+        "Google Sheets",
+        "OpenAI API",
+        "APIs & Webhooks"
+      ],
+      "metric": "Reporting effort cut to minutes",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/automated-business-kpi-analysis-growth-insights"
+    },
+    {
+      "name": "Automated Offer Letter & Response Tracking System",
+      "pain": "Offer letters were assembled and sent by hand for every candidate.",
+      "solution": "Sheet trigger → copy template → fill Docs → PDF → Drive → share + email with buttons → webhook response → validate → status + follow-up emails",
+      "stack": [
+        "n8n",
+        "Google Sheets",
+        "Google Docs",
+        "Google Drive",
+        "Gmail"
+      ],
+      "metric": "Zero manual follow-up",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/automated-offer-letter-response-tracking"
+    },
+    {
+      "name": "Autonomous CI/CD Code Reviewer & Refactoring Harness",
+      "pain": "Development teams merge pull requests with subtle performance bugs, architectural debt, and security flaws because senior engineers lack time for deep, line-by-line code reviews.",
+      "solution": "GitHub PR Webhook → AST Diff Parser → Coder Agent (Drafts Patch) → Isolated Docker Sandbox (ESLint/Ruff, Pytest/Jest, Security Checks) ⇄ Evaluator Agent (Evaluator-Optimizer Loop) → GitHub MCP Direct Commit (Signed Patch on Branch) & Annotated Summary",
+      "stack": [
+        "Python",
+        "LangChain Core",
+        "GitHub MCP",
+        "Docker SDK",
+        "Claude 3.5 Sonnet",
+        "Pytest",
+        "ESLint",
+        "GitHub Actions"
+      ],
+      "metric": "80% faster PR bottleneck · 95% bug catch rate",
+      "client_type": "High-Velocity Engineering Teams & Venture-Backed Startups",
+      "url": "https://imawais.engineer/projects/autonomous-cicd-code-reviewer"
+    },
+    {
+      "name": "Brand-Governed Content Engine with Deterministic Critic Loop",
+      "pain": "Most content pipelines generate generic, low-retention copy that frequently hallucinates or violates strict corporate brand voice guidelines.",
+      "solution": "Raw Audio / Long-Form Video → Whisper API Transcription → Actor Agent (Variant Drafts via Grok & Claude) ⇄ Critic Agent (Style Rules, Lexicon Check, Regex Banned Filter) → Gate (Score >= 95% & Schema Compliant) → Next.js Content Studio → Social/CMS Export",
+      "stack": [
+        "Next.js 15",
+        "Python",
+        "Whisper API",
+        "Grok API (xAI)",
+        "Claude 3.5 Sonnet",
+        "Pydantic",
+        "Tailwind CSS"
+      ],
+      "metric": "30+ posts/day · 100% brand voice compliance",
+      "client_type": "Media Brands, Marketing Agencies, Corporate Communications",
+      "url": "https://imawais.engineer/projects/brand-governed-content-critic"
+    },
+    {
+      "name": "End-to-End Client Intake & Onboarding Automation",
+      "pain": "The agency spent hours manually moving leads from forms to CRM to calendars to project tools to onboarding.",
+      "solution": "Multi-trigger (forms, Calendly, Stripe) → n8n orchestration → parallel Airtable + Notion + Calendar + Gmail + Slack + Twilio",
+      "stack": [
+        "n8n",
+        "Airtable",
+        "Notion",
+        "Google Calendar",
+        "Gmail",
+        "Slack",
+        "Clearbit",
+        "Twilio",
+        "Stripe"
+      ],
+      "metric": "10+ hrs/week saved · 80% fewer no-shows",
+      "client_type": "Direct client (agency)",
+      "url": "https://imawais.engineer/projects/client-intake-onboarding-automation"
+    },
+    {
+      "name": "Hierarchical L1/L2 Customer Support Orchestrator",
+      "pain": "Single-prompt chatbots fail when customer requests span multiple functional domains (e.g., 'Downgrade my subscription, refund the pro-rated difference, and tell me why webhooks dropped payloads').",
+      "solution": "Inbound Support Ticket → Supervisor Agent (Intent & Plan State) → Parallel Dispatch [Billing Worker (Stripe MCP) | Technical Worker (Linear/GH MCP) | Knowledge Worker (Pinecone RAG)] → State Barrier Join → Synthesis & Dispatch (Zendesk / Email)",
+      "stack": [
+        "LangGraph",
+        "FastAPI",
+        "Stripe API",
+        "Zendesk API",
+        "Linear API",
+        "Pinecone",
+        "OpenAI text-embedding-3-large"
+      ],
+      "metric": "60% autonomous resolution · Multi-API execution",
+      "client_type": "Multi-Tenant SaaS Platforms & High-Volume E-Commerce",
+      "url": "https://imawais.engineer/projects/hierarchical-support-swarm"
+    },
+    {
+      "name": "Dynamic HubSpot Lead Routing with GPT-4 & Airtable",
+      "pain": "New leads sat in a queue until someone triaged them manually.",
+      "solution": "HubSpot trigger → enrich contact → create Airtable record → AI agent with structured output parser → update record + Slack + Gmail → upsert back to HubSpot",
+      "stack": [
+        "n8n",
+        "HubSpot",
+        "Airtable",
+        "OpenAI GPT-4",
+        "Google Gemini",
+        "Slack",
+        "Gmail"
+      ],
+      "metric": "Leads routed in seconds",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/hubspot-lead-routing-gpt4-airtable"
+    },
+    {
+      "name": "Autonomous Proposal Swarm with Human-in-the-Loop Governance",
+      "pain": "Sales agencies spend 5+ hours manually extracting discovery call notes to draft custom proposals, leading to acute pipeline bottlenecks.",
+      "solution": "Raw Audio/Transcript → Ingest & Parse (FastAPI) → Scope Extractor (Claude 3.5 Sonnet) → Cost Estimator (PostgreSQL Rate Cards) → Proposal Drafter → LangGraph Interrupt (State Checkpoint) → Next.js 15 SSE Review Dashboard → WeasyPrint PDF Pipeline → Client Dispatch",
+      "stack": [
+        "LangGraph",
+        "FastAPI",
+        "Next.js 15",
+        "PostgreSQL",
+        "Claude 3.5 Sonnet",
+        "WeasyPrint",
+        "Docker",
+        "Supabase"
+      ],
+      "metric": "5 hrs → 3 min drafting · 100% human oversight",
+      "client_type": "B2B Professional Services & Technical Agencies",
+      "url": "https://imawais.engineer/projects/human-in-the-loop-proposal-swarm"
+    },
+    {
+      "name": "Recreate Instagram Reels on Demand with Gemini & MiniMax",
+      "pain": "Creators and social media managers want variations of trending reels, but recreating one by hand means re-shooting or editing from scratch.",
+      "solution": "Chat trigger → RapidAPI Reel Downloader → Formatter → Null check → Download reel → Gemini File API upload → Gemini 2.0 Flash analysis → Replicate MiniMax Video-01 → Wait → Status poll loop → Fetch video output",
+      "stack": [
+        "n8n",
+        "Instagram",
+        "Google Gemini",
+        "Replicate",
+        "APIs & Webhooks"
+      ],
+      "metric": "Reel URL in → new AI reel out",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/instagram-reel-recreation-gemini-minimax"
+    },
+    {
+      "name": "Instagram Reels Outlier Detection with n8n & Telegram",
+      "pain": "The client needed to monitor 50+ Instagram business accounts and instantly identify high-performing Reels without manual checking.",
+      "solution": "Schedule → Google Sheets (accounts) → SocialCrawl API → n8n processing → Telegram notification + Sheets log",
+      "stack": [
+        "n8n",
+        "SocialCrawl API",
+        "Google Sheets",
+        "Telegram Bot",
+        "JavaScript"
+      ],
+      "metric": "100% viral detection rate",
+      "client_type": "Direct client (referral from a previous client)",
+      "url": "https://imawais.engineer/projects/instagram-reels-outlier-telegram-n8n"
+    },
+    {
+      "name": "Automated Lead Reply & Follow-Up System",
+      "pain": "Lead responses were missed or delayed across GoHighLevel and spreadsheets.",
+      "solution": "Google Sheets trigger → n8n → condition (replied?) → GHL update or ClickUp task → Sheets status update",
+      "stack": [
+        "n8n",
+        "Google Sheets",
+        "GoHighLevel",
+        "ClickUp",
+        "JavaScript",
+        "Webhooks"
+      ],
+      "metric": "90% less manual follow-up",
+      "client_type": "Direct client (marketing agency)",
+      "url": "https://imawais.engineer/projects/lead-reply-sync-gohighlevel-clickup"
+    },
+    {
+      "name": "Automated LinkedIn Job Search Automation with OpenAI & Telegram Alerts",
+      "pain": "Job seekers spend hours scrolling LinkedIn, reading endless job descriptions, and guessing which roles are worth applying to.",
+      "solution": "Schedule → Drive (resume) → Sheets (criteria) → LinkedIn scrape → AI match & cover letter → Sheets log → Telegram alerts",
+      "stack": [
+        "n8n",
+        "LinkedIn",
+        "OpenAI",
+        "Google Gemini",
+        "Google Sheets",
+        "Google Drive",
+        "Telegram Bot",
+        "Web Scraping"
+      ],
+      "metric": "3+ hrs/day → under 5 min",
+      "client_type": "Job seekers / professionals",
+      "url": "https://imawais.engineer/projects/linkedin-job-search-automation-openai-telegram"
+    },
+    {
+      "name": "Multi-Query RAG on Supabase pgvector with n8n & OpenAI",
+      "pain": "Basic RAG implementations struggle with complex, multi-part questions.",
+      "solution": "User query → AI agent decomposition → multi-query retrieval → Supabase vector store → relevance filter → 'Think' reasoning → final answer",
+      "stack": [
+        "n8n",
+        "Supabase Vector Store",
+        "OpenAI GPT-5-mini",
+        "NVIDIA Embeddings",
+        "JavaScript"
+      ],
+      "metric": "90% better answer quality · 60% fewer hallucinations",
+      "client_type": "Direct client (education / knowledge base business)",
+      "url": "https://imawais.engineer/projects/multi-query-rag-supabase-openai"
+    },
+    {
+      "name": "Custom MCP Server for a Privacy-First SQL AI Analyst",
+      "pain": "Commercial LLMs cannot be safely granted direct raw credentials to production databases due to data privacy regulations and security boundaries.",
+      "solution": "User Natural Query → LLM Orchestrator (ReAct) → JSON-RPC 2.0 (stdio/SSE) → Custom Python MCP Server (Dynamic Schema Lister, AST sqlglot Validator, Sandboxed Executor) → PostgreSQL Engine → [Success: Recharts Visual] / [Error: Traceback Feedback → Self-Correction Loop]",
+      "stack": [
+        "Python 3.12",
+        "FastMCP SDK",
+        "PostgreSQL",
+        "React",
+        "Recharts",
+        "GPT-4o",
+        "sqlglot",
+        "Docker"
+      ],
+      "metric": "Zero data leakage · Autonomous query healing",
+      "client_type": "SaaS Companies, Private Equity Portfolios, Healthcare Systems",
+      "url": "https://imawais.engineer/projects/privacy-first-sql-mcp-analyst"
+    },
+    {
+      "name": "Real Estate Lead Generation & Property Monitoring",
+      "pain": "Real estate professionals spent hours manually searching property websites and tracking new listings.",
+      "solution": "Schedule → BrowserAct search → Make.com processing → Iterator (per property) → parallel Telegram + Email + CRM",
+      "stack": [
+        "Make.com",
+        "BrowserAct",
+        "Telegram API",
+        "Gmail",
+        "Outlook",
+        "CRM"
+      ],
+      "metric": "10+ hrs/week saved",
+      "client_type": "Direct client (real estate agency / investor)",
+      "url": "https://imawais.engineer/projects/real-estate-lead-generation-browseract-make"
+    },
+    {
+      "name": "Automated Slack Reporting with Apify & n8n",
+      "pain": "The client needed structured data extracted from multiple web sources and delivered daily to an internal Slack channel.",
+      "solution": "Schedule → Apify data pull → Make/n8n processing → Slack notification",
+      "stack": [
+        "Apify",
+        "Make.com",
+        "n8n",
+        "Google Sheets",
+        "Slack",
+        "JavaScript"
+      ],
+      "metric": "10+ hrs/week saved",
+      "client_type": "Small business / agency",
+      "url": "https://imawais.engineer/projects/slack-reporting-pipeline-apify-n8n"
+    },
+    {
+      "name": "Voice AI Appointment Booking with ElevenLabs & Cal.com",
+      "pain": "Booking by phone meant staff had to check calendars and call back, or callers abandoned the process.",
+      "solution": "Voice agent → n8n webhook → intent check → Cal.com slots (GET) or booking (POST) → response to voice agent → spoken confirmation",
+      "stack": [
+        "n8n",
+        "ElevenLabs",
+        "Cal.com",
+        "APIs & Webhooks"
+      ],
+      "metric": "Books inside the call",
+      "client_type": "Portfolio build",
+      "url": "https://imawais.engineer/projects/voice-ai-appointment-booking-elevenlabs-calcom"
+    },
+    {
+      "name": "WhatsApp AI Chatbot with a Google Docs Knowledge Base",
+      "pain": "Businesses receive the same repetitive WhatsApp questions about policies, schedules, services, and rules.",
+      "solution": "WhatsApp → Kapso → n8n webhook → Google Doc reader → Gemini → Sheets logging → WhatsApp reply",
+      "stack": [
+        "n8n",
+        "Kapso WhatsApp",
+        "Google Docs",
+        "Google Gemini",
+        "Google Sheets",
+        "JavaScript"
+      ],
+      "metric": "24/7 support · 50% fewer tickets",
+      "client_type": "Direct client (Kapso / Meta-verified WhatsApp provider)",
+      "url": "https://imawais.engineer/projects/whatsapp-ai-assistant-google-docs"
+    },
+    {
+      "name": "AI-Powered YouTube Publishing Automation",
+      "pain": "Creators and agencies spend hours manually publishing videos to YouTube.",
+      "solution": "Schedule → Sheets (pending videos) → Drive (download) → OpenAI (metadata) → YouTube upload → Sheets status → Gmail notification",
+      "stack": [
+        "n8n",
+        "OpenAI",
+        "Google Drive",
+        "Google Sheets",
+        "YouTube API",
+        "Gmail",
+        "JavaScript"
+      ],
+      "metric": "10+ hrs/week saved",
+      "client_type": "Direct client (content creator / agency)",
+      "url": "https://imawais.engineer/projects/youtube-publishing-automation"
+    }
+  ],
+  "client_personas": [
+    {
+      "type": "Marketing & sales agencies (GoHighLevel / HubSpot)",
+      "pain": "Leads arrive faster than anyone can qualify, route and follow up, so inquiries sit in inboxes and go cold.",
+      "service_to_pitch": "AI Lead Qualification & CRM Automation",
+      "search_keywords": [
+        "GoHighLevel agency owner",
+        "marketing agency operations",
+        "HubSpot agency",
+        "lead qualification automation"
+      ]
+    },
+    {
+      "type": "SaaS & e-commerce support teams",
+      "pain": "Tickets arrive from email and website forms faster than agents can triage; customers wait hours for acknowledgement and urgent issues get buried.",
+      "service_to_pitch": "AI Customer Support Triage + Hierarchical Support Orchestration",
+      "search_keywords": [
+        "SaaS support automation",
+        "ecommerce customer support automation",
+        "AI support triage",
+        "helpdesk automation"
+      ]
+    },
+    {
+      "type": "Real estate agencies, clinics & local service businesses",
+      "pain": "Web inquiries are not qualified or followed up quickly, and reviews plus appointment booking are handled manually.",
+      "service_to_pitch": "AI Lead Qualification + WhatsApp AI Assistant + Review Management",
+      "search_keywords": [
+        "real estate agency",
+        "skin clinic",
+        "dental clinic",
+        "local service business automation"
+      ]
+    },
+    {
+      "type": "Social media agencies & content teams",
+      "pain": "Manual monitoring of many Instagram accounts and re-shooting trending Reels by hand does not scale.",
+      "service_to_pitch": "Social Media Management + Meta Business Suite Management + AI Social Media Automation",
+      "search_keywords": [
+        "social media agency",
+        "Instagram Reels automation",
+        "social media manager automation",
+        "Meta Business Suite manager",
+        "social media manager",
+        "content calendar automation"
+      ]
+    },
+    {
+      "type": "Small businesses, creators & busy founders",
+      "pain": "Repetitive admin, inbox management, scheduling and content production eat the founder's week, and off-the-shelf tools do not fit their process.",
+      "service_to_pitch": "Virtual Assistant Automation + Vibe-Coded Internal Tools",
+      "search_keywords": [
+        "need virtual assistant",
+        "hire VA",
+        "vibe coder",
+        "internal tool automation"
+      ]
+    }
+  ],
+  "proof_points": [
+    "Upwork 5.0/5.0 rating",
+    "100% success rate on Upwork",
+    "n8n Certified — Essentials & APIs",
+    "GenAI Workflow Orchestration — DeepLearning.AI",
+    "USAII Global AI Hackathon 2026 — Finalist",
+    "24 documented AI automation case studies",
+    "10+ hrs/week saved on automated Slack reporting",
+    "20+ hrs/week saved on support triage with 90% faster replies",
+    "90% faster review responses with AI review management",
+    "6+ hrs/week saved and 2x conversion on real estate lead qualification",
+    "100% viral detection rate on Instagram Reels outlier monitoring"
+  ],
+  "hunting_keywords": {
+    "google_maps": [
+      "digital marketing agency",
+      "real estate agency",
+      "skin clinic",
+      "dental clinic",
+      "restaurant",
+      "ecommerce store"
+    ],
+    "social": [
+      "need chatbot",
+      "need AI agent",
+      "need virtual assistant automation",
+      "need social media manager automation",
+      "need meta business suite manager",
+      "need n8n workflow",
+      "need CRM automation",
+      "need social media manager",
+      "need vibe coder"
+    ],
+    "job_boards": [
+      "chatbot developer remote",
+      "AI agent developer remote",
+      "n8n automation remote",
+      "CRM automation specialist remote",
+      "meta business suite manager remote",
+      "virtual assistant remote",
+      "social media manager remote"
+    ]
+  },
+  "outreach_angles": [
+    {
+      "service": "Website & Landing Page Builds",
+      "hook": "A fast landing page that turns the traffic you already pay for into booked calls, live in days not months.",
+      "case_study_to_link": "https://imawais.engineer/projects"
+    },
+    {
+      "service": "Backend & API Builds",
+      "hook": "A small, reliable backend for forms, bookings and dashboards instead of spreadsheets and manual copy-paste.",
+      "case_study_to_link": "https://imawais.engineer/projects"
+    },
+    {
+      "service": "Customer Support & Inbox Management",
+      "hook": "Inbox triage and reply templates handled every day, so no enquiry sits unanswered for two days.",
+      "case_study_to_link": "https://imawais.engineer/projects/ai-email-labeling-agent-gmail"
+    },
+    {
+      "service": "AI Lead Qualification & CRM Automation",
+      "hook": "Every inquiry enriched, scored and routed to the right person before it goes cold.",
+      "case_study_to_link": "https://imawais.engineer/projects/ai-lead-qualification-real-estate"
+    },
+    {
+      "service": "n8n Workflow Automation",
+      "hook": "Replace 10+ hours a week of manual data collection and formatting with a scheduled Slack or Telegram digest.",
+      "case_study_to_link": "https://imawais.engineer/projects/slack-reporting-pipeline-apify-n8n"
+    },
+    {
+      "service": "AI Customer Support Triage",
+      "hook": "Instant acknowledgement, priority routing and 90% faster replies without adding support headcount.",
+      "case_study_to_link": "https://imawais.engineer/projects/ai-customer-support-triage"
+    },
+    {
+      "service": "AI Social Media Automation",
+      "hook": "Monitor 50+ Instagram accounts and surface only genuine Reel outliers instead of checking manually.",
+      "case_study_to_link": "https://imawais.engineer/projects/instagram-reels-outlier-telegram-n8n"
+    },
+    {
+      "service": "WhatsApp & Meta messaging automation",
+      "hook": "A 24/7 WhatsApp assistant grounded in your own documents that cuts repeat tickets by half.",
+      "case_study_to_link": "https://imawais.engineer/projects/whatsapp-ai-assistant-google-docs"
+    },
+    {
+      "service": "Virtual Assistant Automation",
+      "hook": "Hand off inbox triage, scheduling and data entry to an AI-assisted VA system that runs the same way every day.",
+      "case_study_to_link": "https://imawais.engineer/projects/ai-email-labeling-agent-gmail"
+    },
+    {
+      "service": "Vibe Coding & Rapid AI Prototyping",
+      "hook": "Turn a rough idea into a working internal tool or automation in days, not weeks.",
+      "case_study_to_link": "https://imawais.engineer/projects/human-in-the-loop-proposal-swarm"
+    },
+    {
+      "service": "Meta Business Suite & Social Media Management",
+      "hook": "Keep Meta Business Suite, DMs and content queues running without manual daily check-ins.",
+      "case_study_to_link": "https://imawais.engineer/projects/whatsapp-ai-assistant-google-docs"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Input: persona.json
+
+Task: Generate job board queries:
+- "chatbot developer remote"
+- "AI agent developer remote"
+- "n8n workflow remote"
+- "virtual assistant automation"
+- "meta business suite manager remote"
+- "social media manager remote + automation"
+
+Filter: posted <7 days, exclude Upwork. Include: RemoteOK, Relomote, We Work Remotely, LinkedIn Jobs, Indeed.
+
+Output: query list + recency = 7d.

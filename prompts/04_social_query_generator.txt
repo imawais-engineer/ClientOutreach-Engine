@@ -1,0 +1,14 @@
+Input: persona.json
+
+Task: Generate social search phrases for last 7 days ONLY:
+- "need chatbot developer"
+- "looking for AI agent"
+- "need virtual assistant automation"
+- "need social media manager"
+- "need meta business suite manager"
+- "need WhatsApp bot"
+- "freelancer required meta business"
+
+Platforms: Instagram, Threads, Facebook Groups.
+
+Output: keywords + recency filter = 7 days.

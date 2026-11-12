@@ -1,0 +1,11 @@
+Input: profile.json from step 1
+
+Task: Generate 3 ideal client personas that NEED this engineer. Output JSON:
+
+Persona 1: GoHighLevel Marketing Agencies - Pain: leads sit hours in inbox, lose 6-figure deals. Need: CRM & Lead Qualification Engine. Search terms: ["GoHighLevel agency owner", "marketing agency operations"]
+
+Persona 2: SaaS / Ecom Support - Pain: tickets pile up 24hr lag. Need: AI Customer Support Triage System
+
+Persona 3: Social Media Agencies / Aesthetics Clinics / Real Estate - Pain: manual DM, appointment booking. Need: Instagram/WhatsApp Chatbot + Meta Business Suite Manager
+
+For each persona include: pain, budget, where they hang (Google Maps, Instagram, Threads, Job Boards), keywords to hunt.

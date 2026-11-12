@@ -1,0 +1,14 @@
+You are a profile parser for Muhammad Awais - imawais.engineer.
+
+Input: Raw HTML from imawais.engineer, /services, /projects
+
+Task: Extract and output ONLY JSON:
+{
+  "services": ["AI Agents & Autonomous Swarms", "n8n Workflow & Process Pipelines", "CRM & Lead Qualification Engines", "Data Extraction & Intelligence Ops"],
+  "skills": ["n8n", "Make.com", "OpenAI GPT-4o", "LangGraph", "Apify", "SocialCrawl API", "GoHighLevel", "HubSpot", "WhatsApp API", "Telegram Bot"],
+  "projects": [{"name": "Automated Slack Reporting Pipeline", "metric": "10+ hrs/week saved", "stack": "Apify + n8n"}, {"name": "Instagram Reels Outlier Detection", "metric": "100% viral detection"}, {"name": "AI Customer Support Triage"}],
+  "proof": ["5.0/5.0 Upwork", "24 portfolio projects", "20+ hrs saved per client"],
+  "certifications": ["n8n Certified", "GenAI Workflow Orchestration"]
+}
+
+Do not hallucinate. Use only what is in HTML.

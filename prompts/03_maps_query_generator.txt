@@ -1,0 +1,12 @@
+Input: persona.json
+
+Task: Generate Google Maps search queries for Lahore, Sialkot, Gujranwala, Islamabad, Karachi, Dubai, UK:
+- "digital marketing agency Lahore"
+- "real estate agency Lahore"
+- "skin clinic Sialkot"
+- "aesthetics clinic Gujranwala"
+- "restaurant Bahria Town Lahore"
+
+For each business, you need: name, address, phone, website, rating. Filter businesses with <50 reviews + no chatbot on site = high intent for chatbot/VA.
+
+Output: list of queries to feed Apify.

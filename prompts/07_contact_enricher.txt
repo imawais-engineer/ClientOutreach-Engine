@@ -1,0 +1,19 @@
+Input: business name + platform
+
+Task: Find contact pathway:
+- If Google Maps: phone, website, find Facebook/Instagram from website footer
+- If social post: profile URL = https://www.threads.com/@handle or https://www.instagram.com/handle, DM link, email if in bio/post, phone if poster includes
+- If job board: application URL, email if in description, LinkedIn company page to DM
+
+Output:
+{
+  "business": "Needkingdom Community",
+  "profile_url": "https://www.threads.com/@needkingdom",
+  "dm_link": "https://www.threads.com/@needkingdom",
+  "email": null,
+  "phone": null,
+  "how_to_contact": "DM on Threads + comment on post https://... with 90 sec Loom",
+  "recency": "2026-10-21"
+}
+
+Never hallucinate email. Only if visible in source.

@@ -1,0 +1,12 @@
+Input: profile.json + one lead (business name + their need)
+
+Task: Score 0-10 why Awais suits. Output JSON:
+{
+  "business": "AURA Skin Clinic Sialkot",
+  "their_need": "Receptionist + Social Media Manager",
+  "why_suits": "Clinic loses 30% bookings via slow DM. Your AI Customer Support Triage + WhatsApp appointment bot + CRM matches exactly. Proof: 10+ hrs saved, 90% faster replies - case study imawais.engineer/projects",
+  "service_to_pitch": "WhatsApp Chatbot + Virtual Assistant Automation + CRM Lead Engine",
+  "proof_to_link": "imawais.engineer/projects - Automated Slack Reporting"
+}
+
+Be specific, not generic.
